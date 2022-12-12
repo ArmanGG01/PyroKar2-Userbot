@@ -1,5 +1,4 @@
 from Zaid.database import cli
-import asyncio
 
 collection = cli["Zaid"]["pmpermit"]
 
