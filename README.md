@@ -1,10 +1,10 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<p align="center">PyroKar 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 🔥 </p>
+<p align="center">𝐏𝐲𝐫𝐨𝐊𝐚𝐫𝟐 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 🔥 </p>
 
-- A First Telegram Userbot Project With Multi Clients Based On PyroGram
-- Codes doesn't matter how many clients booted it's work separatly with every client! Faster af!
-- Deploy Upto 10 Ids!
+- Ini Adalah Repo Uji Coba Inline Pertama Saya Dengan Multi Clients Dari PyroGram
+- Jangan Asal Copy Kontol!
+- Dapat Mendeploy Sampai 10 String !
 
 <p align="center"><a href="https://t.me/obrolansuar"><img src="https://telegra.ph/file/723d8ef9fb7e721135221.jpg" width="300"></a></p>
 <p align="center">
@@ -36,12 +36,12 @@ and you ended up in a Finale Battle with Telegram and at the end
 
 ## VPS/Locally deploy!
 ```console
-Zaid@Debian~ $ apt-get -y update
-Zaid@Debian~ $ apt-get -y install git gcc python3-dev
-Zaid@Debian~ $ git clone https://github.com/ArmanGG01/PyroKar2
-Zaid@Debian~ $ cd PyroKar2
-Zaid@Debian~ $ pip3 install -U-r requirements.txt
-Zaid@Debian~ $ cp sample.env .env
+Arman@kontok~ $ apt-get -y update
+Arman@kontol~ $ apt-get -y install git gcc python3-dev
+Arman@kontol~ $ git clone https://github.com/ArmanGG01/PyroKar2
+Arman@kontol~ $ cd PyroKar2
+Arman@kontol~ $ pip3 install -U-r requirements.txt
+Arman@kontol~ $ cp sample.env .env
 ```
 
 <h3 align="center">
@@ -49,8 +49,8 @@ Zaid@Debian~ $ cp sample.env .env
 </h3>
 
 ```console
-Zaid@Debian~ $ screen
-Zaid@Debian~ $ python3 -m PyroKar2
+Arman@kontol~ $ screen
+Arman@kontol~ $ python3 -m PyroKar2
 ```
 
 ### ꜱᴘᴇᴄɪᴀʟ ᴄʀᴇᴀᴅɪᴛꜱ 💖
