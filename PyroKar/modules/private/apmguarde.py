@@ -1,9 +1,6 @@
 from pyrogram import filters, Client
-import asyncio
-from Zaid import SUDO_USER
 from Zaid.modules.help import *
-from pyrogram.methods import messages
-from .pmguard import get_arg, denied_users
+from .pmguard import get_arg
 
 import Zaid.database.pmpermitdb as Zaid
 

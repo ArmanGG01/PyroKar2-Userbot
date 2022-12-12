@@ -1,6 +1,6 @@
 import asyncio
 import importlib
-from pyrogram import Client, idle
+from pyrogram import idle
 from Zaid.helper import join
 from Zaid.modules import ALL_MODULES
 from Zaid import clients, app, ids

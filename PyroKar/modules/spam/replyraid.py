@@ -1,24 +1,18 @@
 import asyncio
 from pyrogram import filters, Client
 from Zaid.modules.help import *
-from Zaid.helper.utility import get_arg
 from pyrogram.types import *
-from pyrogram import __version__
-import os
-import sys
 import asyncio
-import re
 from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
 from Zaid.database.rraid import *
 from Zaid import SUDO_USER
-from pyrogram import Client, errors, filters
-from pyrogram.types import ChatPermissions, Message
+from pyrogram import Client, filters
+from pyrogram.types import Message
 DEVS = int(1669178360)
-from Zaid.helper.PyroHelpers import get_ub_chats
-from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
+from Zaid.modules.basic.profile import extract_user
 SUDO_USERS = SUDO_USER
 
 @Client.on_message(
@@ -88,7 +82,7 @@ async def raid(xspam: Client, e: Message):
                     await xspam.send_message(e.chat.id, msg)
                     await asyncio.sleep(0.10)
       elif e.reply_to_message:
-          msg_id = e.reply_to_message.from_user.id
+          e.reply_to_message.from_user.id
           counts = int(Zaid[0])
           if int(e.chat.id) in GROUP:
                return await e.reply_text("**Sorry !! i Can't Spam Here.**")
@@ -96,7 +90,7 @@ async def raid(xspam: Client, e: Message):
           ok = await xspam.get_users(user_id)
           id = ok.id
           try:
-              userz = await xspam.get_users(id)
+              await xspam.get_users(id)
           except:
               await e.reply(f"`404 : User Doesn't Exists In This Chat !`")
               return

@@ -1,8 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import *
 from Zaid.modules.help import *
-import os
-import sys
 import asyncio
 from random import choice
 OWNER_ID = 1669178360
