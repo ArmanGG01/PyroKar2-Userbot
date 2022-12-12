@@ -1,11 +1,6 @@
 import time
 import traceback
 from sys import version as pyver
-import os
-import shlex
-import textwrap
-from typing import Tuple
-import asyncio 
 
 from pyrogram import Client
 from pyrogram import __version__ as pyrover

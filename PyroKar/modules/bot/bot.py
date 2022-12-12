@@ -1,7 +1,6 @@
 import traceback
 
 from pyrogram import Client, filters
-from pyrogram.errors import MessageDeleteForbidden
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
 from Zaid import CMD_HELP, app
@@ -12,7 +11,7 @@ from Zaid import ids as users
 @Client.on_callback_query()
 async def _callbacks(_, callback_query: CallbackQuery):
     query = callback_query.data.lower()
-    bot_me = await app.get_me()
+    await app.get_me()
     if query == "helper":
         buttons = paginate_help(0, CMD_HELP, "helpme")
         await app.edit_inline_text(
