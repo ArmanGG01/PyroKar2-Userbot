@@ -1,4 +1,4 @@
-from pyrogram.types import InlineKeyboardButton, WebAppInfo
+from pyrogram.types import InlineKeyboardButton
 
 class Data:
 
