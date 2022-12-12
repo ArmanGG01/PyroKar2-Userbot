@@ -1,6 +1,3 @@
-import os
-import sys
-from re import sub
 from time import time
 import asyncio
 

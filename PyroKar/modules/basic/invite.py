@@ -1,4 +1,3 @@
-import asyncio
 from pyrogram import Client, filters
 from pyrogram.enums import ChatType, UserStatus
 from pyrogram.types import Message
@@ -46,9 +45,9 @@ async def inv(client: Client, message: Message):
         if user.status in zxb:
             try:
                 await client.add_chat_members(tgchat.id, user.id)
-            except FloodWait as e:
+            except FloodWait:
                 return
-            except Exception as e:
+            except Exception:
                 pass
 
 @Client.on_message(filters.command("invitelink", ".") & filters.me)

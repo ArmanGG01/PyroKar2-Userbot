@@ -4,7 +4,7 @@ from pyrogram import *
 from pyrogram.types import *
 
 
-from Zaid.helper.basic import edit_or_reply, get_text, get_user
+from Zaid.helper.basic import get_text, get_user
 
 from Zaid.modules.help import *
 

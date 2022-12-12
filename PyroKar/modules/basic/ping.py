@@ -3,10 +3,9 @@ from datetime import datetime
 
 import speedtest
 from pyrogram import Client, filters
-from pyrogram.raw import functions
 from pyrogram.types import Message
 
-from Zaid import StartTime, app, SUDO_USER
+from Zaid import SUDO_USER, StartTime
 from Zaid.helper.PyroHelpers import SpeedConvert
 from Zaid.modules.bot.inline import get_readable_time
 

@@ -35,9 +35,9 @@ async def evaluation_func(bot: Client, message: Message):
     status_message = await message.reply_text("Processing ...")
     cmd = message.text.split(" ", maxsplit=1)[1]
 
-    reply_to_id = message.id
+    message.id
     if message.reply_to_message:
-        reply_to_id = message.reply_to_message.id
+        message.reply_to_message.id
 
     old_stderr = sys.stderr
     old_stdout = sys.stdout
@@ -117,9 +117,9 @@ async def execution_func(bot, message):
 async def execution(bot: Client, message: Message):
     cmd = message.text.split(" ", maxsplit=1)[1]
 
-    reply_to_id = message.id
+    message.id
     if message.reply_to_message:
-        reply_to_id = message.reply_to_message.id
+        message.reply_to_message.id
 
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE

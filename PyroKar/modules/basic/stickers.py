@@ -2,18 +2,12 @@ import asyncio
 import os
 from io import BytesIO
 import asyncio
-import math
 import os
-import shlex
-from typing import Tuple
 
 from PIL import Image
-from pymediainfo import MediaInfo
 import asyncio
 import os
-import shlex
 import textwrap
-from typing import Tuple
 
 from PIL import Image, ImageDraw, ImageFont
 import cv2
@@ -453,7 +447,7 @@ async def tinying(client: Client, message: Message):
     reply = message.reply_to_message
     if not (reply and (reply.media)):
         return await message.edit_text("**Silahkan Balas Ke Pesan Sticker!**")
-    tex = await message.edit_text("`Processing . . .`")
+    await message.edit_text("`Processing . . .`")
     ik = await client.download_media(reply)
     im1 = Image.open("cache/blank.png")
     if ik.endswith(".tgs"):

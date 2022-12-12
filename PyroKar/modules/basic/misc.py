@@ -9,7 +9,6 @@ from Zaid import START_TIME
 from Zaid import SUDO_USER
 from Zaid.helper.PyroHelpers import ReplyCheck
 from Zaid.modules.help import add_command_help
-from Zaid.modules.bot.inline import get_readable_time
 
 alive_logo = ALIVE_PIC or "https://telegra.ph/file/cc0890d0876bc18c19e05.jpg"
 

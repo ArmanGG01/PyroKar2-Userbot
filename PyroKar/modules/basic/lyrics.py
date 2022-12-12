@@ -53,7 +53,7 @@ async def send_lyrics(bot: Client, message: Message):
             await message.edit("That didn't work out")
             await asyncio.sleep(2)
         await message.delete()
-    except Exception as e:
+    except Exception:
         await message.edit("`Failed to find lyrics`")
         await asyncio.sleep(2)
         await message.delete()

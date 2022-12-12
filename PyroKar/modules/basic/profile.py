@@ -1,12 +1,9 @@
 import os
 from asyncio import sleep
 import os
-import sys
-from re import sub
-from time import time
 
 
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from Zaid import SUDO_USER

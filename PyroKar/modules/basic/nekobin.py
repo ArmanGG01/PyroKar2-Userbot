@@ -1,7 +1,4 @@
 from Zaid.modules.help import add_command_help
-import asyncio
-import requests
-import aiohttp
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
