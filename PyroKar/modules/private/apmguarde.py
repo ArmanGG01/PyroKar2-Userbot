@@ -1,8 +1,8 @@
 from pyrogram import filters, Client
-from Zaid.modules.help import *
+from PyroKar.modules.help import *
 from .pmguard import get_arg
 
-import Zaid.database.pmpermitdb as Zaid
+import PyroKar.database.pmpermitdb as Zaid
 
 
 
