@@ -1,7 +1,7 @@
 from pyrogram import Client, enums, filters 
 from pyrogram.types import Message 
 from config import LOG_GROUP
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 log = []
 
 
