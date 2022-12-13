@@ -1,22 +1,22 @@
 import asyncio
 import importlib
 from pyrogram import idle
-from Zaid.helper import join
-from Zaid.modules import ALL_MODULES
-from Zaid import clients, app, ids
+from PyroKar.helper import join
+from PyroKar.modules import ALL_MODULES
+from PyroKar import clients, app, ids
 
 async def start_bot():
     await app.start()
     print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
-        importlib.import_module("Zaid.modules" + all_module)
-        print("Successfully Imported Modules 💥")
+        importlib.import_module("PyroKar.modules" + all_module)
+        print("Successfully Imported Modules 💢")
     for cli in clients:
         try:
             await cli.start()
             ex = await cli.get_me()
             await join(cli)
-            print(f"Started {ex.first_name} 🔥")
+            print(f"Started {ex.first_name} 💢")
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
