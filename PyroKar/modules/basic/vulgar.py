@@ -5,7 +5,7 @@ from pyrogram import filters, Client
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import Message
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 bad_words = ["nigga", "nigger", "coon", "retard", "fuck", "motherfucker"]
 
