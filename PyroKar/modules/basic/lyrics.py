@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from Zaid import SUDO_USER
-from Zaid.modules.help import add_command_help
+from PyroKar import SUDO_USER
+from PyroKar.modules.help import add_command_help
 
 
 @Client.on_message(
