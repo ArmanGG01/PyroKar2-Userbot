@@ -6,8 +6,9 @@
 - Jangan Asal Copy Kontol!
 - Dapat Mendeploy Sampai 10 String !
 
-<p align="center"><a href="https://t.me/obrolansuar"><img src="https://telegra.ph/file/723d8ef9fb7e721135221.jpg" width="300"></a></p>
 <p align="center">
+  <img src="https://telegra.ph/file/3f4c55755b365077bfc05.jpg">
+</p>
     <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
 
 <h3 align="center">Klik Tombol di Bawah ini untuk Deploy di Heroku</h3>
