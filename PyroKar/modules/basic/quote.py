@@ -3,9 +3,9 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Zaid.helper.utility import get_arg
+from PyroKar.helper.utility import get_arg
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 
 @Client.on_message(filters.me & filters.command(["q", "quotly"], "."))
