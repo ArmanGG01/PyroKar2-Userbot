@@ -1,6 +1,6 @@
-from Zaid.database import cli
+from PyroKar.database import cli
 
-collection = cli["Zaid"]["pmpermit"]
+collection = cli["PyroKar"]["pmpermit"]
 
 PMPERMIT_MESSAGE = (
     "**ᴡᴀʀɴɪɴɢ!⚠️ ᴘʟᴢ ʀᴇᴀᴅ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴄᴀʀᴇꜰᴜʟʟʏ..\n\n**"
