@@ -1,4 +1,4 @@
-from Zaid.database import cli
+from PyroKar.database import cli
 
 gbun = cli["GBAN"]
 
