@@ -1,13 +1,13 @@
 from pyrogram import filters, Client
 from pyrogram.types import *
-from Zaid.modules.help import *
+from PyroKar.modules.help import *
 import asyncio
 from random import choice
-OWNER_ID = 1669178360
+OWNER_ID = 1694909518
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
-from Zaid import SUDO_USER
+from PyroKar import SUDO_USER
 SUDO_USERS = SUDO_USER
 Usage = f"**❌ Wrong Usage ❌** \n Type: `.help dmspam`"
 
@@ -28,7 +28,7 @@ async def dmraid(xspam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
+              counts = int(PyroKar[0])
               await e.reply_text("`Dm Raid Strated Successfully`")
               for _ in range(counts):
                     reply = choice(RAID)
@@ -46,10 +46,10 @@ async def dmraid(xspam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
-              await e.reply_text("Dm Raid Strated Successfully")
+              counts = int(PyroKar[0])
+              await e.reply_text("Dm Arman Strated Successfully")
               for _ in range(counts):
-                    reply = choice(RAID)
+                    reply = choice(ARMAN)
                     msg = f"{reply}"
                     await xspam.send_message(id, msg)
                     await asyncio.sleep(0.10)
@@ -61,7 +61,7 @@ async def dmspam(spam: Client, e: Message):
       text = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       Zaid = text[1:]
       if len(Zaid) == 2:
-          msg = str(Zaid[1])
+          msg = str(PyroKar[1])
           ok = await spam.get_users(text[0])
           id = ok.id
           if int(id) in VERIFIED_USERS:
@@ -71,7 +71,7 @@ async def dmspam(spam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
+              counts = int(PyroKar[0])
               await e.reply_text("Dm Spam Strated")
               for _ in range(counts):
                     await spam.send_message(id, msg)
@@ -88,7 +88,7 @@ async def dmspam(spam: Client, e: Message):
                 await e.reply_text(text)
           else:
               counts = int(text[0])
-              msg = str(Zaid[0])
+              msg = str(PyroKar[0])
               await e.reply_text("☢️ Dm Spam Strated ☢️")
               for _ in range(counts):
                     await spam.send_message(id, msg)
