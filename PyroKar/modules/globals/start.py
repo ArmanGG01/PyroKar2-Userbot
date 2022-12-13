@@ -1,4 +1,4 @@
-from Zaid import app
+from PyroKar import app
 from pyrogram import filters
 
 
