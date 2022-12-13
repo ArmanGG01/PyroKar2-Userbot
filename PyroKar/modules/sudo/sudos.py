@@ -1,10 +1,10 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-DEVS = int(1669178360)
-from Zaid.modules.basic.profile import extract_user
-from Zaid import SUDO_USER
+DEVS = int(1694909518)
+from PyroKar.modules.basic.profile import extract_user
+from PyroKar import SUDO_USER
 from config import OWNER_ID
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 ok = []
 
