@@ -1,12 +1,12 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
-from Zaid.database.rraid import *
-from Zaid import SUDO_USER
+from PyroKar.database.rraid import *
+from PyroKar import SUDO_USER
 from pyrogram import Client, filters
 from pyrogram.types import Message
-DEVS = int(1669178360)
-from Zaid.modules.basic.profile import extract_user
+DEVS = int(1694909518)
+from PyroKar.modules.basic.profile import extract_user
 SUDO_USERS = SUDO_USER
 
 
