@@ -5,11 +5,11 @@ import speedtest
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Zaid import SUDO_USER, StartTime
-from Zaid.helper.PyroHelpers import SpeedConvert
-from Zaid.modules.bot.inline import get_readable_time
+from PyroKar import SUDO_USER, StartTime
+from PyroKar.helper.PyroHelpers import SpeedConvert
+from PyroKar.modules.bot.inline import get_readable_time
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 class WWW:
     SpeedTest = (
