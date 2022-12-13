@@ -1,4 +1,4 @@
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
@@ -7,7 +7,7 @@ import re
 
 from pyrogram.types import Message
 from httpx import AsyncClient
-from Zaid.helper.utility import get_arg
+from PyroKar.helper.utility import get_arg
 
 
 # Pastebins
