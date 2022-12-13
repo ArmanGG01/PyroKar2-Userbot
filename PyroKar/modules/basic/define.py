@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from Zaid.helper.aiohttp_helper import AioHttp
-from Zaid.modules.help import add_command_help
+from PyroKar.helper.aiohttp_helper import AioHttp
+from PyroKar.modules.help import add_command_help
 
 
 @Client.on_message(filters.command(["define", "dict"], ".") & filters.me)
