@@ -3,7 +3,7 @@ import time
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 
 class Custom(dict):
