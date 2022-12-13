@@ -1,8 +1,8 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message 
 
-from Zaid.database.pmpermitdb import get_approved_users, pm_guard
-import Zaid.database.pmpermitdb as Zaid
+from PyroKar.database.pmpermitdb import get_approved_users, pm_guard
+import PyroKar.database.pmpermitdb as Zaid
 from config import PM_LOGGER
 FLOOD_CTRL = 0
 ALLOWED = []
