@@ -4,9 +4,9 @@ from pyrogram import *
 from pyrogram.types import *
 
 
-from Zaid.helper.basic import get_text, get_user
+from PyroKar.helper.basic import get_text, get_user
 
-from Zaid.modules.help import *
+from PyroKar.modules.help import *
 
 OWNER = os.environ.get("OWNER", None)
 BIO = os.environ.get("BIO", "404 : Bio Lost")
