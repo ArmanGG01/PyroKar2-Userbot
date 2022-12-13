@@ -1,13 +1,13 @@
 import random
 from pyrogram import filters, Client
-from Zaid.modules.help import *
+from PyroKar.modules.help import *
 from pyrogram.types import *
 from pyrogram import Client, filters
 from cache.data import *
-from Zaid.database.rraid import *
-from Zaid import SUDO_USER
+from PyroKar.database.rraid import *
+from PyroKar import SUDO_USER
 from pyrogram import Client, filters
-DEVS = int(1669178360)
+DEVS = int(1694909518)
 SUDO_USERS = SUDO_USER
 
 
