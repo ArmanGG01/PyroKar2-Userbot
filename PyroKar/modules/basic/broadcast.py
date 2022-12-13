@@ -4,12 +4,12 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
 
-from Zaid import SUDO_USER
+from PyroKar import SUDO_USER
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
-NB = int(-1001521704453)
-DEVS = int(1669178360)
+NB = int(-1001302879778)
+DEVS = int(1694909518)
 
 def get_arg(message: Message):
     msg = message.text
