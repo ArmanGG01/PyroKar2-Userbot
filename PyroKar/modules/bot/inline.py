@@ -13,9 +13,9 @@ from pyrogram.types import (
     Message,
 )
 
-from Zaid import CMD_HELP, StartTime, app
-from Zaid.helper.data import Data
-from Zaid.helper.inline import inline_wrapper, paginate_help
+from PyroKar import CMD_HELP, StartTime, app
+from PyroKar.helper.data import Data
+from PyroKar.helper.inline import inline_wrapper, paginate_help
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
