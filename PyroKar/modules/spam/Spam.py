@@ -6,15 +6,15 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
 from config import LOG_GROUP
-from Zaid import SUDO_USER 
+from PyroKar import SUDO_USER 
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 commands = ["spam", "statspam", "slowspam", "fastspam"]
 SPAM_COUNT = [0]
 
 BLACKLIST_CHAT = []
-BLACKLIST_CHAT.append(-1001521704453)
+BLACKLIST_CHAT.append(-1001302879778)
 
 
 
