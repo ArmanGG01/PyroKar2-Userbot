@@ -5,10 +5,10 @@ from platform import python_version
 from pyrogram import __version__, filters, Client
 from pyrogram.types import Message
 from config import ALIVE_PIC, ALIVE_TEXT
-from Zaid import START_TIME
-from Zaid import SUDO_USER
-from Zaid.helper.PyroHelpers import ReplyCheck
-from Zaid.modules.help import add_command_help
+from PyroKar import START_TIME
+from PyroKar import SUDO_USER
+from PyroKar.helper.PyroHelpers import ReplyCheck
+from PyroKar.modules.help import add_command_help
 
 alive_logo = ALIVE_PIC or "https://telegra.ph/file/cc0890d0876bc18c19e05.jpg"
 
@@ -16,21 +16,21 @@ if ALIVE_TEXT:
    txt = ALIVE_TEXT
 else:
     txt = (
-        f"** ✘ zαι∂ υѕєявσт ✘**\n\n"
+        f"** ✘ 𝙿𝚢𝚛𝚘𝙺𝚊𝚛 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 ✘**\n\n"
         f"❏ **νєяѕισи**: `2.0`\n"
         f"├• **υρтιмє**: `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
         f"├• **ρутнσи**: `{python_version()}`\n"
         f"├• **ρуяσgяαм**: `{__version__}`\n"
-        f"├• **ѕυρρσят**: [Click](t.me/TheSupportChat)\n"
-        f"├• **¢нαииєℓ**: [Click](t.me/TheUpdatesChannel)\n"
-        f"└• **яєρσ**: [Click](https://GitHub.com/itz-zaid/Zaid-Userbot)"        
+        f"├• **ѕυρρσят**: [Click](t.me/obrolansuar)\n"
+        f"├• **¢нαииєℓ**: [Click](t.me/Karc0de)\n"
+        f"└• **яєρσ**: [Click](https://GitHub.com/ArmanGG01/PyroKar2)"        
     )
 
 @Client.on_message(
     filters.command(["alive", "awake"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def alive(client: Client, message: Message):
-    xx = await message.reply_text("⚡️")
+    xx = await message.reply_text("👑")
     try:
        await message.delete()
     except:
@@ -52,23 +52,23 @@ async def alive(client: Client, message: Message):
 
 @Client.on_message(filters.command("repo", ".") & filters.me)
 async def repo(bot: Client, message: Message):
-    await message.edit("⚡")
+    await message.edit("👑")
     await asyncio.sleep(1)
     await message.edit("Fetching Source Code.....")
     await asyncio.sleep(1)
-    await message.edit("Here is repo: \n\n\nhttps://github.com/itz-zaid/Zaid-UserBot\nFork & Give an ⭐")
+    await message.edit("Here is repo: \n\n\nhttps://github.com/ArmanGG01/PyroKar2\nFork & Give an ⭐")
 
 
 @Client.on_message(filters.command("creator", ".") & filters.me)
 async def creator(bot: Client, message: Message):
-    await message.edit("https://gitHub.com/itz-zaid")
+    await message.edit("https://gitHub.com/ArmanGG01")
 
 
 @Client.on_message(filters.command(["uptime", "up"], ".") & filters.me)
 async def uptime(bot: Client, message: Message):
     now = datetime.now()
     current_uptime = now - START_TIME
-    await message.edit(f"Uptime ⚡\n" f"```{str(current_uptime).split('.')[0]}```")
+    await message.edit(f"Uptime 👑\n" f"```{str(current_uptime).split('.')[0]}```")
 
 
 @Client.on_message(filters.command("id", ".") & filters.me)
