@@ -3,8 +3,8 @@ from asyncio import sleep
 from pyrogram import filters, Client 
 
 
-from Zaid.helper.aiohttp_helper import AioHttp
-from Zaid.modules.help import add_command_help
+from PyroKar.helper.aiohttp_helper import AioHttp
+from PyroKar.modules.help import add_command_help
 
 
 def replace_text(text):
