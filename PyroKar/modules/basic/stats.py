@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-from Zaid.modules.help import *
+from PyroKar.modules.help import *
 
 
 @Client.on_message(filters.command(["stats", "status"], ".") & filters.me)
