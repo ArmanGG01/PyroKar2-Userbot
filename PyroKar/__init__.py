@@ -23,7 +23,7 @@ else:
 if API_HASH:
    API_HASH = API_HASH
 else:
-   print("WARNING: API HASH NOT FOUND USING ZAID API ⚡")   
+   print("WARNING: API HASH NOT FOUND USING PYROKAR API ⚡")   
    API_HASH = "4e984ea35f854762dcde906dce426c2d"
 
 if not BOT_TOKEN:
@@ -34,7 +34,7 @@ app = Client(
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
-    plugins=dict(root="Zaid/modules/bot"),
+    plugins=dict(root="PyroKar/modules/bot"),
     in_memory=True,
 )
 
