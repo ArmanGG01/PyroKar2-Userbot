@@ -6,8 +6,8 @@ from pyrogram.errors import YouBlockedUser
 from pyrogram.types import *
 
 
-from Zaid.modules.help import add_command_help
-from Zaid.modules.basic.profile import extract_user
+from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.profile import extract_user
 
 @Client.on_message(filters.command(["sg", "sa", "sangmata"], ".") & filters.me)
 async def sg(client: Client, message: Message):
