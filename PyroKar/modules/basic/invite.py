@@ -1,10 +1,10 @@
 from pyrogram import Client, filters
 from pyrogram.enums import ChatType, UserStatus
 from pyrogram.types import Message
-from Zaid import SUDO_USER
+from PyroKar import SUDO_USER
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 
 @Client.on_message(
