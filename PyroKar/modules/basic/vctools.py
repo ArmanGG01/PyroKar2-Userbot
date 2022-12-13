@@ -7,9 +7,9 @@ from pyrogram.raw.functions.messages import GetFullChat
 from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
 from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
 from pyrogram.types import Message
-from Zaid import SUDO_USER
+from PyroKar import SUDO_USER
 from pyrogram.types import Message
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 
 def get_arg(message: Message):
