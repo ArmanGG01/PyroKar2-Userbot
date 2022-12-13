@@ -5,7 +5,7 @@ from pyrogram.raw import functions
 from pyrogram.types import Message
 
 
-from Zaid.modules.help import add_command_help
+from PyroKar.modules.help import add_command_help
 
 
 @Client.on_message(
