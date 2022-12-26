@@ -9,9 +9,6 @@
   "website": "https://small-sharp-tool.com/",
   "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
   "logo": "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg",
-  "success_url": "/welcome",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
   },
    "env": {
    "STRING_SESSION1": {
@@ -39,7 +36,7 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "eco"
     }
   },
   "image": "heroku/ruby",
