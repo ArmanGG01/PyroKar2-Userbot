@@ -4,7 +4,7 @@ collection = cli["PyroKar"]["rraid"]
 
 
 async def rraid_user(chat):
-    doc = {"_id": "Rraid", "users": [chat]}
+    doc = {"_id": "Karman", "users": [chat]}
     r = await collection.find_one({"_id": "Rraid"})
     if r:
         await collection.update_one({"_id": "Rraid"}, {"$push": {"users": chat}})
@@ -13,7 +13,7 @@ async def rraid_user(chat):
 
 
 async def get_rraid_users():
-    results = await collection.find_one({"_id": "Rraid"})
+    results = await collection.find_one({"_id": "Karman"})
     if results:
         return results["users"]
     else:
@@ -21,4 +21,4 @@ async def get_rraid_users():
 
 
 async def unrraid_user(chat):
-    await collection.update_one({"_id": "Rraid"}, {"$pull": {"users": chat}})
+    await collection.update_one({"_id": "Karman"}, {"$pull": {"users": chat}})
