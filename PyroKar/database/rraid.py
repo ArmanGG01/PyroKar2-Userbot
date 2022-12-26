@@ -1,13 +1,13 @@
 from PyroKar.database import cli
 
-collection = cli["PyroKar"]["rraid"]
+collection = cli["PyroKar"]["Karman"]
 
 
 async def rraid_user(chat):
     doc = {"_id": "Karman", "users": [chat]}
-    r = await collection.find_one({"_id": "Rraid"})
+    r = await collection.find_one({"_id": "Karman"})
     if r:
-        await collection.update_one({"_id": "Rraid"}, {"$push": {"users": chat}})
+        await collection.update_one({"_id": "Karman"}, {"$push": {"users": chat}})
     else:
         await collection.insert_one(doc)
 
