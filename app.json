@@ -1,8 +1,14 @@
 {
-    "name": "PyroKar Userbot",
-    "description": "Ini Adalah Bot Telegram Pertama Yang Menggunakan Database Pyrogram Di Telegram,Jika Terjadi Sesuatu Pada Akun Kalian Itu Bukan Salah Saya.",
-    "keywords": ["telegram" "userbot", "PyroKar", "pyrogram"],
-    "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
+    "name": "PyroKar2-Userbot",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+    "productivity",
+    "HTML5",
+    "scalpel"
+  ],
+  "website": "https://small-sharp-tool.com/",
+  "repository": "https://github.com/ArmanGG02/PyroKar2-Userbot",
+  "logo": "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg",
   "stack": "container",
     "env": {
         "STRING_SESSION1": {
