@@ -1,1 +1,1 @@
-worker: python3 -m PyroKar2
+worker: python3 -m Zaid
