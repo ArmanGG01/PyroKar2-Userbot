@@ -2,7 +2,7 @@
     "name": "PyroKar Userbot",
     "description": "Ini Adalah Bot Telegram Pertama Yang Menggunakan Database Pyrogram Di Telegram,Jika Terjadi Sesuatu Pada Akun Kalian Itu Bukan Salah Saya.",
     "keywords": ["telegram" "userbot", "PyroKar", "pyrogram"],
-    "repository": "https://github.com/ArmanGG01/PyroKar",
+    "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
   "stack": "container",
     "env": {
         "STRING_SESSION1": {
