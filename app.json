@@ -1,6 +1,6 @@
 {
     "name": "PyroKar2-Userbot",
-  "description": "This app does one little thing, and does it well.",
+  "description": "Ini Hanya Bot Gabut Yang Di Buat Untuk Menghapus Akun Kalian Semua Kontol.",
   "keywords": [
     "productivity",
     "HTML5",
@@ -31,6 +31,12 @@
             "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
             "required": true,
             "value": ""
+        },
+        "formation": {
+            "worker": {
+            "quantity": 1,
+            "size": "eco"
+
         }
 
     }
