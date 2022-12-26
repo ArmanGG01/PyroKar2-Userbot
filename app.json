@@ -13,28 +13,28 @@
   "scripts": {
     "postdeploy": "bundle exec rake bootstrap"
   },
-      "env": {
-        "STRING_SESSION1": {
-            "description": "Untuk String Bisa Langsung Ambil Di @karstring_bot",
-            "required": true
-        },
-        "MONGO_URL": {
-            "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
-            "required": true
-        },
-        "SUDO_USERS": {
-            "description": "Daftar Pengguna (Id Pengguna)",
-            "required": true
-        },
-        "OWNER_ID": {
-            "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
-            "required": true
-        },
-        "BOT_TOKEN": {
-            "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
-            "required": true,
-            "value": ""
-          }
+   "env": {
+   "STRING_SESSION1": {
+   "description": "Untuk String Bisa Langsung Ambil Di @karstring_bot",
+   "required": true
+  },
+   "MONGO_URL": {
+   "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
+   "required": true
+  },
+   "SUDO_USERS": {
+   "description": "Daftar Pengguna (Id Pengguna)",
+   "required": true
+  },
+   "OWNER_ID": {
+   "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
+   "required": true
+  },
+   "BOT_TOKEN": {
+    "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
+    "required": true,
+    "value": ""
+     }
   },
   "formation": {
     "web": {
