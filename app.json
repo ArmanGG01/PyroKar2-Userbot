@@ -1,68 +1,63 @@
 {
-  "name": "PyroKar2-Userbot",
-  "description": "This app does one little thing, and does it well.",
-  "keywords": [
-    "productivity",
-    "HTML5",
-    "scalpel"
-  ],
-  "website": "https://small-sharp-tool.com/",
-  "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
-  "logo": "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg",
-  },
-   "env": {
-   "STRING_SESSION1": {
-   "description": "Untuk String Bisa Langsung Ambil Di @karstring_bot",
-   "required": true
-  },
-   "MONGO_URL": {
-   "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
-   "required": true
-  },
-   "SUDO_USERS": {
-   "description": "Daftar Pengguna (Id Pengguna)",
-   "required": true
-  },
-   "OWNER_ID": {
-   "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
-   "required": true
-  },
-   "BOT_TOKEN": {
-    "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
-    "required": true,
-    "value": ""
-     }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "eco"
+  "name": "PyroKar-Userbot",
+  "description": "[PyroKar-Userbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.  Powered by PyroKar-Userbot.",
+  "stack": "heroku-22",
+  "env": {
+    "API_ID": {
+      "description": "Dapatkan API ID di web my.telegram.org Masukan yg APP ID Telegram",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Dapatkan API Hash di web my.telegram.org",
+      "required": true
+    },
+    "STRING_SESSION1": {
+      "description": "Dapatkan String Session Pyrogram di Grup » https://t.me/obrolansuar » Lalu ketik #string",
+      "required": true
+    },
+    "MONGO_URL": {
+      "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "Daftar Pengguna (Id Pengguna)",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Masukan Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+      "required": false
     }
   },
-  "image": "heroku/ruby",
   "addons": [
-    "openredis",
     {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
-    },
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "9.5"
-      }
+      "plan": "heroku-postgresql"
     }
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
   ],
-  "environments": {
-    "test": {
-      "scripts": {
-        "test": "bundle exec rake test"
-      }
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
     }
   }
 }
