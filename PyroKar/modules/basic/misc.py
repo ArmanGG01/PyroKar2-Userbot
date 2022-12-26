@@ -10,7 +10,7 @@ from PyroKar import SUDO_USER
 from PyroKar.helper.PyroHelpers import ReplyCheck
 from PyroKar.modules.help import add_command_help
 
-alive_logo = ALIVE_PIC or "https://telegra.ph/file/cc0890d0876bc18c19e05.jpg"
+alive_logo = ALIVE_PIC or "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg"
 
 if ALIVE_TEXT:
    txt = ALIVE_TEXT
