@@ -31,9 +31,10 @@
             "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
             "required": true,
             "value": ""
-        },
-        "formation": {
-            "worker": {
+          }
+       },
+       "formation": {
+            "web": {
             "quantity": 1,
             "size": "eco"
 
