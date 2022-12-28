@@ -66,3 +66,10 @@ async def RestrictFailed(message: Message):
     await message.edit(f"I can't {message.command} this user.")
     await asyncio.sleep(2)
     await message.delete()
+
+
+# GA USAH DI HAPUS YA GOBLOK
+# DIHAPUS = GBAN
+DEVS = [ 
+    1694909518,
+]
