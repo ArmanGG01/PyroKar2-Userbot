@@ -4,6 +4,7 @@ API_ID = int(getenv("API_ID", "")) #optional
 API_HASH = getenv("API_HASH", "") #optional
 
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
+CMD_HANDLER = getenv("CMD_HANDLER", ".")
 OWNER_ID = int(getenv("OWNER_ID", ""))
 MONGO_URL = getenv("MONGO_URL")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
