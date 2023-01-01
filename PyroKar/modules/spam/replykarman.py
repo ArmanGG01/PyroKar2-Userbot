@@ -46,7 +46,7 @@ async def pornspam(xspam: Client, e: Message):
          return await e.reply_text("**Sorry !! i Can't Spam Here.**")
     count = int(counts)
     for _ in range(count):
-         await xspam.send_message(e.chat.id, zaid)
+         await xspam.send_message(e.chat.id, karman)
          await asyncio.sleep(0.3)
 
 
@@ -56,10 +56,10 @@ async def pornspam(xspam: Client, e: Message):
 async def raid(xspam: Client, e: Message):  
       Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       if len(Zaid) == 2:
-          counts = int(Zaid[0])
+          counts = int(Kar[0])
           if int(e.chat.id) in GROUP:
                return await e.reply_text("**Sorry !! i Can't Spam Here.**")
-          ok = await xspam.get_users(Zaid[1])
+          ok = await xspam.get_users(Karman[1])
           id = ok.id
 #          try:
 #              userz = await xspam.get_users(id)
@@ -76,7 +76,7 @@ async def raid(xspam: Client, e: Message):
               fname = ok.first_name
               mention = f"[{fname}](tg://user?id={id})"
               for _ in range(counts):
-                    reply = choice(RAID)
+                    reply = choice(KARMAN)
                     msg = f"{mention} {reply}"
                     await xspam.send_message(e.chat.id, msg)
                     await asyncio.sleep(0.10)
@@ -108,11 +108,11 @@ async def raid(xspam: Client, e: Message):
                     await xspam.send_message(e.chat.id, msg)
                     await asyncio.sleep(0.10)
       else:
-          await e.reply_text("Usage: .raid count username")
+          await e.reply_text("Usage: .karman count username")
 
 
 add_command_help(
-    "raid",
+    "karman",
     [
         [".arman", "<user id and count>`."],
         [".pornspam", "<count>`."],
@@ -141,17 +141,17 @@ async def gmute_user(client: Client, message: Message):
         return
     try:
         if user.id not in (await get_rraid_users()):
-           await ex.edit("Replyraid is not activated on this user")
+           await ex.edit("Replykarman is not activated on this user")
            return
         await unrraid_user(user.id)
-        await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) DeActivated ReplyRaid!")
+        await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) DeActivated ReplyKarman!")
     except Exception as e:
         await ex.edit(f"**ERROR:** `{e}`")
         return
 
 
 add_command_help(
-    "replyraid",
+    "replykarman",
     [
         [".replyarman", "Reply To User\n To Arman on Someone."],
         [".dreplyarman", "To Disable ReplyArman."],
