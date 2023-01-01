@@ -62,28 +62,19 @@ async def speed_test(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["ping"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command("ceping", ["."]) & filters.user(DEVS) & ~filters.me
 )
+@Client.on_message(filters.command("ping", cmd) & filters.me)
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
-    try:
-       await message.delete()
-    except:
-       pass
-    await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
-    await xx.edit("**40% ████▒▒▒▒▒▒**")
-    await xx.edit("**60% ██████▒▒▒▒**")
-    await xx.edit("**80% ████████▒▒**")
-    await xx.edit("**100% ██████████**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await xx.edit(
-        f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
-        f"├• **╰☞** - `%sms`\n"
-        f"├• **╰☞ -** `{uptime}` \n"
-        f"└• **╰☞:** {client.me.mention}" % (duration)
+    await message.reply_text(
+        f"❏ **PONG!!💢**\n"
+        f"├• **Pinger** - `%sms`\n"
+        f"├• **Uptime -** `{uptime}` \n"
+        f"└• **Owner :** {client.me.mention}" % (duration)
     )
 
 
