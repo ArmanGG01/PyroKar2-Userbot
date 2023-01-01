@@ -7,6 +7,7 @@ from pyrogram.types import Message
 
 from PyroKar import SUDO_USER, StartTime
 from PyroKar.helper.PyroHelpers import SpeedConvert
+from PyroKar.helper.adminHelpers import DEVS
 from PyroKar.modules.bot.inline import get_readable_time
 
 from PyroKar.modules.help import add_command_help
