@@ -90,7 +90,7 @@ async def ramping(client: Client, message: Message):
         "ㅤㅤStatus : 𝘗𝘳𝘦𝘮𝘪𝘶𝘮\n"
         f"ㅤㅤㅤㅤping bot:"
         f"`%sms` \n"
-        f"ㅤㅤㅤㅤmodules:</b> <code>{len(modules)} Modules</code> \n"
+        f"ㅤㅤㅤㅤmodules:</b> <code>{len(basic)} Modules</code> \n"
         f"ㅤㅤㅤㅤbot version: {BOT_VER} \n"
         f"ㅤㅤㅤㅤbot uptime:"
         f"`{uptime}` \n"
