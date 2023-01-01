@@ -78,6 +78,8 @@ async def pingme(client: Client, message: Message):
         f"├• **Uptime -** `{uptime}` \n"
         f"└• **Owner :** {client.me.mention}" % (duration)
     )
+
+
 add_command_help(
     "ping",
     [
