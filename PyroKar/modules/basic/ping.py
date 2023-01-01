@@ -80,7 +80,7 @@ async def pingme(client: Client, message: Message):
     )
 
 @Client.on_message(filters.command("kar", cmd) & filters.me)
-async def ramping(client: Client, message: Message):
+async def ping(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     end = datetime.now()
@@ -90,7 +90,6 @@ async def ramping(client: Client, message: Message):
         "ㅤㅤStatus : 𝘗𝘳𝘦𝘮𝘪𝘶𝘮\n"
         f"ㅤㅤㅤㅤping bot:"
         f"`%sms` \n"
-        f"ㅤㅤㅤㅤmodules:</b> <code>{len(basic)} Modules</code> \n"
         f"ㅤㅤㅤㅤbot version: {BOT_VER} \n"
         f"ㅤㅤㅤㅤbot uptime:"
         f"`{uptime}` \n"
