@@ -9,4 +9,5 @@ class Data:
         .replace("]", "")
         .replace("'", "")
     )
+    help_pic = or "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg"
     reopen = [[InlineKeyboardButton("Re-Open", callback_data="reopen")]]
