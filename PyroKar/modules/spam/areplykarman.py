@@ -12,7 +12,7 @@ SUDO_USERS = SUDO_USER
 
 
 @Client.on_message(
-    filters.command(["replyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["replykarman"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
@@ -31,17 +31,17 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     if user.id == client.me.id:
-        return await ex.edit("**Okay Sure.. 🐽**")
+        return await ex.edit("**Ok .. 👑**")
     elif user.id == SUDO_USERS:
-        return await ex.edit("**Okay But Failed Because this user in sudos.. 🐽**")
+        return await ex.edit("**Okay But Failed Because this user in sudos.. 👑**")
     elif user.id == VERIFIED_USERS:
-        return await ex.edit("**Chal Chal Baap ko Mat sikha.. 🐽**")
+        return await ex.edit("**Chal Chal Baap ko Mat sikha.. 👑**")
     try:
         if user.id in (await get_rraid_users()):
-           await ex.edit("Replyraid is activated on this user")
+           await ex.edit("Replykarma  is activated on this user")
            return
-        await rraid_user(user.id)
-        await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) Activated ReplyRaid!")
+        await karman_user(user.id)
+        await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) Activated ReplyKarman!")
     except Exception as e:
         await ex.edit(f"**ERROR:** `{e}`")
         return
