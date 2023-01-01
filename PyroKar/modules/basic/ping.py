@@ -5,6 +5,7 @@ import speedtest
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+from config import CMD_HANDLER
 from PyroKar import SUDO_USER, StartTime
 from PyroKar.helper.PyroHelpers import SpeedConvert
 from PyroKar.helper.adminHelpers import DEVS
