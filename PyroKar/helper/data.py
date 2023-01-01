@@ -1,4 +1,5 @@
 from pyrogram.types import InlineKeyboardButton
+from config import HELP_PIC
 
 class Data:
 
