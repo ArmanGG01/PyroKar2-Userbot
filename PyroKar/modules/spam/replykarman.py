@@ -55,8 +55,8 @@ async def pornspam(xspam: Client, e: Message):
 )
 async def raid(xspam: Client, e: Message):  
       Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Zaid) == 2:
-          counts = int(Kar[0])
+      if len(Karman) == 2:
+          counts = int(Karman[0])
           if int(e.chat.id) in GROUP:
                return await e.reply_text("**Sorry !! i Can't Spam Here.**")
           ok = await xspam.get_users(Karman[1])
