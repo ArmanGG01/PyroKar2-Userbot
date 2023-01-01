@@ -79,6 +79,26 @@ async def pingme(client: Client, message: Message):
         f"└• **Owner :** {client.me.mention}" % (duration)
     )
 
+@Client.on_message(filters.command("kar", cmd) & filters.me)
+async def ramping(client: Client, message: Message):
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await message.reply_text(
+        "PyRokar-Userbot\n"
+        "ㅤㅤStatus : 𝘗𝘳𝘦𝘮𝘪𝘶𝘮\n"
+        f"ㅤㅤㅤㅤping bot:"
+        f"`%sms` \n"
+        f"ㅤㅤㅤㅤmodules:</b> <code>{len(modules)} Modules</code> \n"
+        f"ㅤㅤㅤㅤbot version: {BOT_VER} \n"
+        f"ㅤㅤㅤㅤbot uptime:"
+        f"`{uptime}` \n"
+        f"ㅤㅤㅤㅤbranch: {brch} \n\n"
+        f"ㅤㅤㅤㅤOwner : {client.me.mention}" % (duration)
+    )
+
+
 
 add_command_help(
     "ping",
