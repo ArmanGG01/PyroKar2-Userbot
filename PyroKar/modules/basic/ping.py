@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from PyroKar import SUDO_USER, StartTime
+from config import CMD_HANDLER as cmd
 from PyroKar.helper.PyroHelpers import SpeedConvert
 from PyroKar.helper.adminHelpers import DEVS
 from PyroKar.modules.bot.inline import get_readable_time
