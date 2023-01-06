@@ -12,7 +12,7 @@ from pyrogram.types import Message
 from PyroKar import SUDO_USER
 from PyroKar.modules.help import add_command_help
 from PyroKar.helper.basic import edit_or_reply
-from PyroKae.helper.tools import get_arg
+from PyroKar.helper.tools import get_arg
 
 
 async def get_group_call(
