@@ -1,15 +1,6 @@
-FROM python:3.10-slim-buster
+FROM hitokizzy/ibel:slim-buster
 
-WORKDIR /app
+RUN git clone -b main https://github.com/ArmanGG01/PyroKar2-Userbot /home/PyroKar/
+WORKDIR /home/PyroKar
 
-RUN apt-get -y update
-
-RUN apt-get -y install git gcc python3-dev
-
-COPY requirements.txt requirements.txt
-
-RUN pip3 install -r requirements.txt
-
-COPY . .
-
-CMD [ "python3", "main.py"]
+CMD ["python3","-m","PyroKar"]
