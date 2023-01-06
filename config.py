@@ -1,19 +1,28 @@
+import os
 from os import getenv
+from dotenv import load_dotenv
 
-API_ID = int(getenv("API_ID", "")) #optional
-API_HASH = getenv("API_HASH", "") #optional
+if os.path.exists(".env"):
+    load_dotenv(".env")
 
+
+API_ID = getenv("API_ID")
+API_HASH = getenv("API_HASH")
+STRING_SESSION1 = getenv("STRING_SESSION1")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
-CMD_HANDLER = getenv("CMD_HANDLER", ".")
-OWNER_ID = int(getenv("OWNER_ID", ""))
+OWNER_ID = getenv("OWNER_ID", "1694909518")
+BOT_TOKEN = getenv("BOT_TOKEN")
 MONGO_URL = getenv("MONGO_URL")
-BOT_TOKEN = getenv("BOT_TOKEN", "")
-ALIVE_PIC = getenv("ALIVE_PIC")
-ALIVE_TEXT = getenv("ALIVE_TEXT")
-HELP_PIC = getenv("HELP_PIC")
+ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg")
+ALIVE_TEXT = getenv("ALIVE_TEXT", "")
 PM_LOGGER = getenv("PM_LOGGER")
 LOG_GROUP = getenv("LOG_GROUP")
-
+GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
+REPO_URL = getenv("REPO_URL", "https://github.com/ArmanGG01/PyroKar2-Userbot")
+BRANCH = getenv("BRANCH", "main") #don't change
+CMD_HANDLER = getenv("CMD_HANDLER", ".")
+HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
