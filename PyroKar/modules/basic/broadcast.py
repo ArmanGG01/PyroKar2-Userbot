@@ -2,14 +2,15 @@ import asyncio
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
+from requests import get
 
 
 from PyroKar import SUDO_USER
 
 from PyroKar.modules.help import add_command_help
-
-NB = int(-1001302879778)
-DEVS = int(1694909518)
+from cache.data import GROUP, VERIFIED_USERS
+NB = GROUP
+DEVS = VERIFIED_USERS
 
 def get_arg(message: Message):
     msg = message.text
@@ -24,9 +25,9 @@ def get_arg(message: Message):
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Memulai Gcast...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Berikan pesan atau balas kepesan**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -48,7 +49,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await tex.edit_text(
-        f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**"
+        f"**Berhasil mengirim ke** `{done}` **Groups, chat, Gagal mengirim** `{error}` **Groups**"
     )
 
 
@@ -57,9 +58,9 @@ async def gcast_cmd(client: Client, message: Message):
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("`Memulai Gcast...`")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**Berikan pesan atau balas kepesan**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -81,7 +82,7 @@ async def gucast(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await text.edit_text(
-        f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**"
+        f"**Berhasil mengirim ke** `{done}` **Groups, chat, Gagal mengirim** `{error}` **Groups**"
     )
 
 
