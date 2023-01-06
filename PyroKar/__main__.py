@@ -1,22 +1,34 @@
 import asyncio
 import importlib
-from pyrogram import idle
+from pyrogram import Client, idle
 from PyroKar.helper import join
 from PyroKar.modules import ALL_MODULES
 from PyroKar import clients, app, ids
+from config import LOG_GROUP
+
+BOT_VER = "0.1.0"
+CMD_HANDLER = ["."]
+MSG_ON = """
+💢 **PyroKar Udah Aktid** 💢
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+💢 **Userbot Version -** `{}`
+💢 **Ketik** `{}alive` **untuk Mengecek Bot**
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+"""
 
 async def start_bot():
     await app.start()
     print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
         importlib.import_module("PyroKar.modules" + all_module)
-        print("Successfully Imported Modules 💢")
+        print(f"Successfully Imported {all_module} ✔")
     for cli in clients:
         try:
             await cli.start()
             ex = await cli.get_me()
             await join(cli)
-            print(f"Started {ex.first_name} 💢")
+            print(f"Started {ex.first_name} ✔ ")
+            await cli.send_message(LOG_GROUP, MSG_ON.format(BOT_VER, CMD_HANDLER))
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
