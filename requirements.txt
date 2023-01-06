@@ -13,6 +13,7 @@ pymongo
 python-dotenv
 pymediainfo
 prettytable
+gitpython
 APScheduler==3.7.0
 git+https://github.com/Itz-fork/py-trans.git
 reportlab
