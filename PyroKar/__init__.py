@@ -1,3 +1,6 @@
+import logging
+import time
+import asyncio
 from pyrogram import Client
 from config import API_ID, API_HASH, SUDO_USERS, OWNER_ID, BOT_TOKEN, STRING_SESSION1, STRING_SESSION2, STRING_SESSION3, STRING_SESSION4, STRING_SESSION5, STRING_SESSION6, STRING_SESSION7, STRING_SESSION8, STRING_SESSION9, STRING_SESSION10
 from datetime import datetime
@@ -87,3 +90,9 @@ if STRING_SESSION10:
    print("Client10: Found.. Starting.. 📳")
    client10 = Client(name="ten", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION10, plugins=dict(root="PyroKar/modules")) 
    clients.append(client10)
+
+client = [client for client in[STRING_SESSION1, STRING_SESSION2, STRING_SESSION3, STRING_SESSION4, STRING_SESSION5, STRING_SEESION6, STRING_SESSION7, STRING_SESSION8, STRING_SESSION9, STRING_SESSION10]if client]
+for client in clients:
+    if not hasattr(client, "group_call"):
+        setattr(client, "group_call", GroupCallFactory(client).get_group_call())
+
