@@ -2,19 +2,11 @@ import asyncio
 import socket
 import sys
 import os
-from re import sub
-from time import time
 import aiohttp
-import requests
 import asyncio
 from os import getenv
-import shlex
-import textwrap
-from typing import Tuple
 
-from PIL import Image, ImageDraw, ImageFont
 
-from pyrogram import enums
 from datetime import datetime
 from os import environ, execle, path, remove
 
