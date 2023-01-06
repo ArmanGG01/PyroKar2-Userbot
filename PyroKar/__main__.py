@@ -1,6 +1,6 @@
 import asyncio
 import importlib
-from pyrogram import Client, idle
+from pyrogram import idle
 from PyroKar.helper import join
 from PyroKar.modules import ALL_MODULES
 from PyroKar import clients, app, ids
