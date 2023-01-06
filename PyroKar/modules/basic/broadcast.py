@@ -2,7 +2,6 @@ import asyncio
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-from requests import get
 
 
 from PyroKar import SUDO_USER
@@ -58,7 +57,7 @@ async def gcast_cmd(client: Client, message: Message):
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Memulai Gcast...`")
+        await message.reply_text("`Memulai Gcast...`")
     else:
         return await message.edit_text("**Berikan pesan atau balas kepesan**")
     done = 0
