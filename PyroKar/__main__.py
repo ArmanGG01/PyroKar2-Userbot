@@ -4,7 +4,6 @@ from pyrogram import idle
 from PyroKar.helper import join
 from PyroKar.modules import ALL_MODULES
 from PyroKar import clients, app, ids
-from config import LOG_GROUP
 
 BOT_VER = "0.1.0"
 CMD_HANDLER = ["."]
