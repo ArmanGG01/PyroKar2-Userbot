@@ -8,7 +8,7 @@ from config import ALIVE_PIC, ALIVE_TEXT
 from PyroKar import START_TIME
 from PyroKar import SUDO_USER
 from PyroKar.helper.PyroHelpers import ReplyCheck
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 alive_logo = ALIVE_PIC or "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg"
 
