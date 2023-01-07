@@ -1,6 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import *
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 import asyncio
 from random import choice
 OWNER_ID = 1694909518
@@ -13,7 +13,7 @@ Usage = f"**❌ Wrong Usage ❌** \n Type: `.help dmspam`"
 
 
 @Client.on_message(
-    filters.command(["dmraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dmkarman"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def dmraid(xspam: Client, e: Message):
       """ Module: Dm Raid """
