@@ -4,7 +4,7 @@ from telegraph import Telegraph, exceptions, upload_file
 import os
 
 
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegram")
