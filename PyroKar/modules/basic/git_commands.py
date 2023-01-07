@@ -12,7 +12,7 @@ from svglib.svglib import svg2rlg
 
 from PyroKar.helper.PyroHelpers import ReplyCheck
 from PyroKar.helper.aiohttp_helper import AioHttp
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 @Client.on_message(filters.command(["ggraph", "commitgraph"], ".") & filters.me)
