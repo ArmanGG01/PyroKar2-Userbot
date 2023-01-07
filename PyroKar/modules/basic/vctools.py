@@ -10,7 +10,7 @@ from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
 from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
 from pyrogram.types import Message
 from PyroKar import SUDO_USER
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 from PyroKar.helper.basic import edit_or_reply
 from PyroKar.helper.tools import get_arg
 
