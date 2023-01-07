@@ -4,7 +4,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from PyroKar import SUDO_USER
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 @Client.on_message(
