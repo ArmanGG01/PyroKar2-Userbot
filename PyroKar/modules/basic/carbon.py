@@ -8,7 +8,7 @@ from PyroKar import aiosession
 
 from PyroKar.helper.PyroHelpers import ReplyCheck
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 async def make_carbon(code):
