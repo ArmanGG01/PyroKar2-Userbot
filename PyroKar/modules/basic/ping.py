@@ -11,7 +11,7 @@ from PyroKar.helper.PyroHelpers import SpeedConvert
 from PyroKar.helper.adminHelpers import DEVS
 from PyroKar.modules.bot.inline import get_readable_time
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 class WWW:
     SpeedTest = (
