@@ -1,6 +1,19 @@
+#
+# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
+#
+# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
+#
+# All rights reserved.
+#
+# Ported by @mrismanaziz
+# FROM File-Sharing-Man < https://github.com/mrismanaziz/File-Sharing-Man/ >
+# t.me/Lunatic0de & t.me/SharingUserbot
+#
+
 import asyncio
 import math
-import sys
 
 import dotenv
 import heroku3
@@ -10,15 +23,14 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import *
-from PyroKar.helper.basic import edit_or_reply
-from PyroKar.helper.misc import HAPP, in_heroku
-from PyroKar.modules.help import add_command_help
+from PyroKar.helpers.basic import edit_or_reply
+from PyroKar.helpers.misc import HAPP, in_heroku
+from PyroKar.utils.misc import restart
 
+from .help import add_command_help
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def restart():
-    os.execvp(sys.executable, [sys.executable, "-m", "geez"])
 
 @Client.on_message(filters.command("setvar", CMD_HANDLER) & filters.me)
 async def set_var(client: Client, message: Message):
@@ -160,20 +172,15 @@ async def usage_heroku(client: Client, message: Message):
     AppHours = math.floor(AppQuotaUsed / 60)
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
-    text =f"""
-ɪɴғᴏ ᴋᴜɪᴛᴀ ᴍᴜ ᴍᴇᴍᴇᴋ
-╭✠╼━━━━━━❖━━━━━━━✠╮
-┣•𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔𝗔𝗡 𝗦𝗔𝗔𝗧 𝗜𝗡𝗜 : 
-┣•   ▸ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ.
-┣•   ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {AppPercentage}% 
-╰✠╼━━━━━━❖━━━━━━━✠╯
-╼┅━━━━━━━━╍━━━━━━━━┅╾ 
-╭✠╼━━━━━━❖━━━━━━━✠╮ 
-┣•𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔𝗔𝗡 𝗕𝗨𝗟𝗔𝗡 𝗜𝗡𝗜 : 
-┣•  ▸ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ. 
-┣•  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {percentage}%. 
-╰✠╼━━━━━━❖━━━━━━━✠╯
-• 𝗦𝗜𝗦𝗔 𝗗𝗬𝗡𝗢  : `{day}` Hari"""
+    text = f"""
+✥ **Informasi Dyno Heroku :**
+╔════════════════════╗
+ ➠ **Penggunaan Dyno** `{HEROKU_APP_NAME}` :
+     •  `{AppHours}`**Jam**  `{AppMinutes}`**Menit |**  [`{AppPercentage}`**%**]
+ ➠ **Sisa kuota dyno bulan ini** :
+     •  `{hours}`**Jam**  `{minutes}`**Menit |**  [`{percentage}`**%**]
+╚════════════════════╝
+✥ **Sisa Dyno Heroku** `{day}` **Hari Lagi**"""
     return await dyno.edit(text)
 
 
@@ -193,10 +200,20 @@ async def usange_heroku(client: Client, message: Message):
         "\n╚════════════════════╝\n"
     )
 
+
 add_command_help(
-    "Heroku",
+    "heroku",
     [
-        [".usage", "kontol."],
-        [".setvar", "cek kontol."],
+        ["setvar", "Untuk mengatur variabel config userbot."],
+        ["delvar", "Untuk menghapus variabel config userbot."],
+        ["getvar", "Untuk melihat variabel config userbot."],
+        [
+            f"usage atau {CMD_HANDLER}dyno",
+            "Untuk mengecheck kouta dyno heroku.",
+        ],
+        [
+            "usange",
+            "Fake Usage Kouta Dyno Heroku jadi 1000jam Untuk menipu temanmu wkwk.",
+        ],
     ],
 )
