@@ -36,7 +36,7 @@ XCB = [
     "https",
     str(HEROKU_APP_NAME),
     "HEAD",
-    "main",
+    "Master",
 ]
 
 BASE = "https://batbin.me/"
