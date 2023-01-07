@@ -10,7 +10,7 @@ from PyroKar.helper.PyroHelpers import GetUserMentionable
 from PyroKar.helper.aiohttp_helper import AioHttp
 from PyroKar.helper.constants import Fs, MEMES, Weebify
 from PyroKar.helper.utility import get_mock_text
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 @Client.on_message(filters.command("lorem", ".") & filters.me)
