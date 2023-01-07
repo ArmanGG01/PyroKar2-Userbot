@@ -6,7 +6,7 @@ from pyrogram.types import *
 
 from PyroKar.helper.basic import get_text, get_user
 
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 
 OWNER = os.environ.get("OWNER", None)
 BIO = os.environ.get("BIO", "404 : Bio Lost")
