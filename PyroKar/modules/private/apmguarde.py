@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 from .pmguard import get_arg
 
 import PyroKar.database.pmpermitdb as Zaid
