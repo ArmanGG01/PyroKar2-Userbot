@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from PyroKar import SUDO_USER
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 @Client.on_message(
