@@ -23,8 +23,8 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import *
-from PyroKar.helpers.basic import edit_or_reply
-from PyroKar.helpers.misc import HAPP, in_heroku
+from PyroKar.helper.basic import edit_or_reply
+from PyroKar.helper.misc import HAPP, in_heroku
 from PyroKar.utils.misc import restart
 
 from .help import add_command_help
