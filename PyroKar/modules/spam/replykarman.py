@@ -1,6 +1,6 @@
 import asyncio
 from pyrogram import filters, Client
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 from pyrogram.types import *
 import asyncio
 from random import choice
