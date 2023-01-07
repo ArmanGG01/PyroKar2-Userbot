@@ -231,7 +231,7 @@ async def upstream(client: Client, message: Message):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         try:
-            remote.push(refspec="HEAD:refs/heads/main", force=True)
+            remote.push(refspec="HEAD:refs/heads/Master", force=True)
         except GitCommandError:
             pass
         await status.edit(
