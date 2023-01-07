@@ -9,7 +9,7 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 DEVS = ["1694909518"]
 admins_in_chat = {}
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 from PyroKar.modules.basic.profile import extract_user
 
 async def extract_user_and_reason(message, sender_chat=False):
