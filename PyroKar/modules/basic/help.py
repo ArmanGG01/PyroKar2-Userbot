@@ -13,8 +13,8 @@ from pyrogram.types import Message
 
 from config import CMD_HANDLER
 from PyroKar import CMD_HELP
-from PyroKar.helpers.basic import edit_or_reply
-from PyroKar.helpers.utility import split_list
+from PyroKar.helper.basic import edit_or_reply
+from PyroKar.helper.utility import split_list
 
 
 @Client.on_message(filters.command("help", CMD_HANDLER) & filters.me)
