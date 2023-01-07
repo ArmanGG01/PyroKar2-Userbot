@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from config import LOG_GROUP
 from PyroKar import SUDO_USER 
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 commands = ["spam", "statspam", "slowspam", "fastspam"]
 SPAM_COUNT = [0]
