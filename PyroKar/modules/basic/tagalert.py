@@ -1,6 +1,6 @@
 from pyrogram import Client, enums, filters 
 from pyrogram.types import Message 
-from config import LOG_GROUP
+from config import BOTLOG_CHATID
 from PyroKar.modules.basic.help import add_command_help
 log = []
 
@@ -27,7 +27,7 @@ if log:
     result += f"\n<b> • Message : </b><code>{message.text}</code>"
     await asyncio.sleep(0.5)
     await client.send_message(
-        LOG_GROUP,
+        BOTLOG_CHATID,
         result,
         parse_mode=enums.ParseMode.HTML,
         disable_web_page_preview=True,
