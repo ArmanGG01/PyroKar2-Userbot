@@ -1,7 +1,6 @@
 import asyncio
 import shlex
 import socket
-import dotenv
 from typing import Tuple
 
 import heroku3
@@ -14,7 +13,7 @@ from PyroKar import LOGGER
 HAPP = None
 
 GIT_TOKEN = ""
-REPO_URL = "https://github.com/ArmanGG01/PyroKar2-Userbor"
+REPO_URL = "https://github.com/ArmanGG01/PyroKar2-Userbot"
 
 XCB = [
     "/",
@@ -118,18 +117,19 @@ async def create_botlog(client):
     if HAPP is None:
         return
     LOGGER("PyroKar").info(
-        "SEBENTAR YA, GUA LAGI BIKIN GRUPLOG BUAT LU."
+        "TUNGGU SEBENTAR. SEDANG MEMBUAT GROUP LOG USERBOT UNTUK ANDA"
     )
-    desc = "Group Log untuk PyroKar-Bot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n💢 Powered By ~ @Karc0de 💢"
+    desc = "Group Log untuk PyroKar-UserBot.\n\nHARAP JANGAN KELUAR DARI GROUP INI.\n\n👑 Powered By ~ @Karc0de 👑"
     try:
-        gruplog = await client.create_supergroup("Logs PyroKar-Bot", desc)
+        gruplog = await client.create_supergroup("PyroKar UserBot", desc)
         if await in_heroku():
             heroku_var = HAPP.config()
-            heroku_var["LOG_GROUP"] = gruplog.id
+            heroku_var["BOTLOG_CHATID"] = gruplog.id
         else:
             path = dotenv.find_dotenv("config.env")
-            dotenv.set_key(path, "LOG_GROUP", gruplog.id)
+            dotenv.set_key(path, "BOTLOG_CHATID", gruplog.id)
     except Exception:
         LOGGER("PyroKar").warning(
-            "var LOG_GROUP kamu belum di isi. Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id Masukan id grup nya di var LOG_GROUP"
+            "var BOTLOG_CHATID kamu belum di isi. Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id Masukan id grup nya di var BOTLOG_CHATID"
         )
+
