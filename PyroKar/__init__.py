@@ -15,6 +15,7 @@ from pytgcalls import GroupCallFactory
 from config import (
     API_HASH,
     API_ID,
+    BOT_TOKEN
     BOTLOG_CHATID,
     DB_URL,
     STRING_SESSION1,
@@ -22,6 +23,11 @@ from config import (
     STRING_SESSION3,
     STRING_SESSION4,
     STRING_SESSION5,
+    STRING_SESSION6,
+    STRING_SESSION7,
+    STRING_SESSION8,
+    STRING_SESSION9,
+    STRING_SESSION10,
     SUDO_USERS,
 )
 
@@ -55,6 +61,11 @@ if (
     and not STRING_SESSION3
     and not STRING_SESSION4
     and not STRING_SESSION5
+    and not STRING_SESSION6
+    and not STRING_SESSION7
+    and not STRING_SESSION8
+    and not STRING_SESSION9
+    and not STRING_SESSION10
 ):
     LOGGER(__name__).error("No String Session Found! Exiting!")
     sys.exit()
