@@ -6,7 +6,7 @@ from pyrogram.types import Message
 
 from PyroKar.helper.basic import edit_or_reply
 
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 
 
 def googlesearch(query):
