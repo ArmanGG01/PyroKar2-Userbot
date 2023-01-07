@@ -101,6 +101,17 @@ TEMP_SETTINGS: Dict[Any, Any] = {}
 TEMP_SETTINGS["PM_COUNT"] = {}
 TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
+if not BOT_TOKEN:
+   print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ")   
+
+app = Client(
+    name="app",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="PyroKar/modules/bot"),
+    in_memory=True,
+
 
 bot1 = (
     Client(
