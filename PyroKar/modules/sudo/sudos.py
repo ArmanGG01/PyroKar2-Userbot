@@ -4,7 +4,7 @@ DEVS = int(1694909518)
 from PyroKar.modules.basic.profile import extract_user
 from PyroKar import SUDO_USER
 from config import OWNER_ID
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 ok = []
 
