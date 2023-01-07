@@ -19,7 +19,7 @@ from config import GIT_TOKEN, REPO_URL, BRANCH
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 HAPP = None
 
 
