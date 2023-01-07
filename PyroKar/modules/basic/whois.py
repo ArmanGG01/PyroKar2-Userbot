@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from PyroKar.helper.PyroHelpers import ReplyCheck
 from PyroKar.modules.basic.profile import extract_user
 
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 
 
 @Client.on_message(filters.command(["whois", "info"], ".") & filters.me)
