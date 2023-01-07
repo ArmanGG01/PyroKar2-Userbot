@@ -1,4 +1,4 @@
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
