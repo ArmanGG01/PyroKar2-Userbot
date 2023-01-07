@@ -1,6 +1,6 @@
 import random
 from pyrogram import filters, Client
-from PyroKar.modules.help import *
+from PyroKar.modules.basic.help import *
 from pyrogram.types import *
 from pyrogram import Client, filters
 from cache.data import *
