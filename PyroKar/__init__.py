@@ -102,7 +102,7 @@ TEMP_SETTINGS["PM_COUNT"] = {}
 TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 if not BOT_TOKEN:
-   print("WARNING: BOT TOKEN NOT FOUND ADD ")   
+    print("WARNING: BOT TOKEN NOT FOUND ADD ")   
 
 bot1 = (
     Client(
