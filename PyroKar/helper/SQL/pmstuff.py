@@ -1,5 +1,5 @@
 try:
-    from PyroKar.helpers.SQL import BASE, SESSION
+    from PyroKar.helper.SQL import BASE, SESSION
 except ImportError:
     raise AttributeError
 from sqlalchemy import Column
