@@ -40,7 +40,7 @@ async def main():
             LOGGER("main").warning(a)
     LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
     if not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(bot1)
+        await create_botlog(app)
     await idle()
     await aiosession.close()
 
