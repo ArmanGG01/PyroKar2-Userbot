@@ -19,7 +19,8 @@ MSG_ON = """
 
 async def main():
     for all_module in ALL_MODULES:
-        importlib.import_module(f"PyroKar.modules" + {all_module}")
+        importlib.import_module("PyroKar.modules" + all_module)
+        print(f"Successfully Imported {all_module} ✔")
     for cli in clients:
         try:
             await cli.start()
