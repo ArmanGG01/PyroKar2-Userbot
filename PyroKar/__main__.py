@@ -4,7 +4,7 @@ from pyrogram import idle
 from uvloop import install
 
 from config import BOT_VER, CMD_HANDLER
-from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, clients, app
+from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, clients, app, ids
 from PyroKar.helper.misc import create_botlog, heroku
 from PyroKar.modules import ALL_MODULES
 
@@ -34,8 +34,11 @@ async def main():
             except BaseException:
                 pass
             LOGGER("PyroKar").info(
-                f"Logged in as {bot.me.first_name} | [ {bot.me.id} ]"
+                f"Logged in as {ex.first_name}"
             )
+                 ids.append(ex.id)
+        except Exception as e:
+            print(f"{e}")
         except Exception as a:
             LOGGER("main").warning(a)
     LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
