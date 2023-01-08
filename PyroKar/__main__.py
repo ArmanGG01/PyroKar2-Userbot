@@ -32,16 +32,10 @@ async def start_bot():
                await cli.send_message(
                    BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
                      )
-
             print(f"Started {ex.first_name} ✔")
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
-        except Exception as a:
-            LOGGER("main").warning(a)
-    LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
-    if not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(app)
     await idle()
 
 loop = asyncio.get_event_loop()
