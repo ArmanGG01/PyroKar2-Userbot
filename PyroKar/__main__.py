@@ -27,8 +27,7 @@ async def start_bot():
         try:
             await cli.start()
             ex = await cli.get_me()
-                        await client.join_chat("StoryMan01")
-            await client.join_chat("Karc0de")
+                       await join(cli)
             try:
                 await cli.send_message(
                     BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
