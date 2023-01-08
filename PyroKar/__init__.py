@@ -102,7 +102,7 @@ TEMP_SETTINGS["PM_COUNT"] = {}
 TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
 if not BOT_TOKEN:
-   print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ")   
+   print("WARNING: BOT TOKEN NOT FOUND p  ADD ")   
 
 app = Client(
     name="app",
@@ -132,7 +132,7 @@ bot2 = (
         api_hash=API_HASH,
         session_string=STRING_SESSION2,
         plugins=dict(root="PyroKar/modules"),
-    )
+    )..................... ,,
     if STRING_SESSION2
     else None
 )
