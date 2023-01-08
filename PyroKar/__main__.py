@@ -1,9 +1,9 @@
 import asyncio
 import importlib
 from pyrogram import idle
-from geez.helper import join
-from geez.modules import ALL_MODULES
-from geez import clients, app, ids
+from PyroKar.helper import join
+from PyroKar.modules import ALL_MODULES
+from PyroKar import clients, app, ids
 from config import BOTLOG_CHATID
 
 BOT_VER = "0.1.0"
