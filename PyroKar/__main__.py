@@ -1,21 +1,20 @@
+import asyncio
 import importlib
+from pyrogram import Client, idle
+from geez.helper import join
+from geez.modules import ALL_MODULES
+from geez import clients, app, ids
+from config import BOTLOG_CHATID
 
-from pyrogram import idle
-from uvloop import install
-
-from config import BOT_VER, CMD_HANDLER
-from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, clients
-from PyroKar.helper.misc import create_botlog, heroku
-from PyroKar.modules import ALL_MODULES
-
+BOT_VER = "0.1.0"
+CMD_HANDLER = ["."]
 MSG_ON = """
-💢 **PyroKar-Userbot Udah Aktif** 💢
+💢 **PyroKar Telah Hidup** 💢
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ❍▹ **Userbot Version -** `{}`
-❍▹ **Ketik** `{}alive` **untuk Mengecheck Bot**
+❍▹ **Ketik** `{}alive` **untuk Mengecek Bot**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 """
-
 
 async def start_bot():
     await app.start()
@@ -28,11 +27,8 @@ async def start_bot():
             await cli.start()
             ex = await cli.get_me()
             await join(cli)
-            try:
-               await cli.send_message(
-                   BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
-                     )
-            print(f"Started {ex.first_name} ✔")
+            print(f"Started {ex.first_name} ✔ ")
+            await cli.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
