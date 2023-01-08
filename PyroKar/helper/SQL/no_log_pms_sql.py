@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Numeric
 
 try:
-    from PyroKar.helpers.SQL import BASE, SESSION
+    from PyroKar.helper.SQL import BASE, SESSION
 except ImportError:
     raise AttributeError
 
