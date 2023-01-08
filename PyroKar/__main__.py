@@ -27,7 +27,7 @@ async def start_bot():
         try:
             await cli.start()
             ex = await cli.get_me()
-                       await join(cli)
+            await join(cli)
             try:
                 await cli.send_message(
                     BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
