@@ -4,7 +4,7 @@ from pyrogram import idle
 from uvloop import install
 
 from config import BOT_VER, CMD_HANDLER
-from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bots
+from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession
 from PyroKar.helper.misc import create_botlog, heroku
 from PyroKar.modules import ALL_MODULES
 
@@ -20,10 +20,10 @@ MSG_ON = """
 async def main():
     for all_module in ALL_MODULES:
         importlib.import_module(f"PyroKar.modules.{all_module}")
-    for bot in bots:
+    for cli in clients:
         try:
-            await bot.start()
-            bot.me = await bot.get_me()
+            await cli.start()
+            bot.me = await cli.get_me()
             await bot.join_chat("StoryMan01")
             await bot.join_chat("Karc0de")
             try:
