@@ -4,7 +4,7 @@ from pyrogram import idle
 from uvloop import install
 
 from config import BOT_VER, CMD_HANDLER
-from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, clients
+from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, clients, app
 from PyroKar.helper.misc import create_botlog, heroku
 from PyroKar.modules import ALL_MODULES
 
@@ -40,7 +40,7 @@ async def main():
             LOGGER("main").warning(a)
     LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
     if not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(client)
+        await create_botlog(app)
     await idle()
     await aiosession.close()
 
