@@ -28,7 +28,7 @@ async def main():
             await client.join_chat("StoryMan01")
             await client.join_chat("Karc0de")
             try:
-                await bot.send_message(
+                await cli.send_message(
                     BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
                 )
             except BaseException:
