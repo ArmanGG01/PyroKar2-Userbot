@@ -34,11 +34,8 @@ async def main():
             except BaseException:
                 pass
             LOGGER("PyroKar").info(
-                f"Logged in as {ex.first_name}"
+                f"Logged in as {ex.first_name} | [ {ex.id} ]"
             )
-                 ids.append(ex.id)
-        except Exception as e:
-            print(f"{e}")
         except Exception as a:
             LOGGER("main").warning(a)
     LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
