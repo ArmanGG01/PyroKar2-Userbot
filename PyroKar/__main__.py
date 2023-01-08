@@ -24,8 +24,8 @@ async def main():
         try:
             await cli.start()
             bot.me = await cli.get_me()
-            await bot.join_chat("StoryMan01")
-            await bot.join_chat("Karc0de")
+            await client.join_chat("StoryMan01")
+            await client.join_chat("Karc0de")
             try:
                 await bot.send_message(
                     BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
