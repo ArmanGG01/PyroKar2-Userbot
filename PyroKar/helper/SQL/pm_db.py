@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String
 
-from PyroKar.helpers.SQL import BASE, SESSION
+from PyroKar.helper.SQL import BASE, SESSION
 
 # class set_req
 # class get_req
