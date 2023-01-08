@@ -4,7 +4,7 @@ from pyrogram import idle
 from uvloop import install
 
 from config import BOT_VER, CMD_HANDLER
-from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, clients, app, ids
+from PyroKar import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, clients
 from PyroKar.helper.misc import create_botlog, heroku
 from PyroKar.modules import ALL_MODULES
 
