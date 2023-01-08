@@ -26,7 +26,7 @@ LOG_CHATS_ = LOG_CHATS()
 @Client.on_message(
     filters.private & filters.incoming & ~filters.service & ~filters.me & ~filters.bot
 )
-async def monito_p_m_s(client: Client, message: Message):
+async def monito_p_m_s(bot: Client, message: Message):
     if BOTLOG_CHATID == -100:
         return
     if gvarstatus("PMLOG") and gvarstatus("PMLOG") == "false":
@@ -56,7 +56,7 @@ async def monito_p_m_s(client: Client, message: Message):
 
 
 @Client.on_message(filters.group & filters.mentioned & filters.incoming)
-async def log_tagged_messages(client: Client, message: Message):
+async def log_tagged_messages(bot: Client, message: Message):
     if BOTLOG_CHATID == -100:
         return
     if gvarstatus("GRUPLOG") and gvarstatus("GRUPLOG") == "false":
@@ -77,7 +77,7 @@ async def log_tagged_messages(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("log", cmd) & filters.me)
-async def set_log_p_m(client: Client, message: Message):
+async def set_log_p_m(bot: Client, message: Message):
     if BOTLOG_CHATID != -100:
         if no_log_pms_sql.is_approved(message.chat.id):
             no_log_pms_sql.disapprove(message.chat.id)
@@ -85,7 +85,7 @@ async def set_log_p_m(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("nolog", cmd) & filters.me)
-async def set_no_log_p_m(client: Client, message: Message):
+async def set_no_log_p_m(bot: Client, message: Message):
     if BOTLOG_CHATID != -100:
         if not no_log_pms_sql.is_approved(message.chat.id):
             no_log_pms_sql.approve(message.chat.id)
@@ -93,7 +93,7 @@ async def set_no_log_p_m(client: Client, message: Message):
 
 
 @Client.on_message(filters.command(["pmlog", "pmlogger"], cmd) & filters.me)
-async def set_pmlog(client: Client, message: Message):
+async def set_pmlog(bot: Client, message: Message):
     if BOTLOG_CHATID == -100:
         return await message.edit(
             "**Untuk Menggunakan Module ini, anda Harus Mengatur** `BOTLOG_CHATID` **di Config Vars**"
@@ -121,7 +121,7 @@ async def set_pmlog(client: Client, message: Message):
 
 
 @Client.on_message(filters.command(["gruplog", "grouplog", "gclog"], cmd) & filters.me)
-async def set_gruplog(client: Client, message: Message):
+async def set_gruplog(bot: Client, message: Message):
     if BOTLOG_CHATID == -100:
         return await message.edit(
             "**Untuk Menggunakan Module ini, anda Harus Mengatur** `BOTLOG_CHATID` **di Config Vars**"
