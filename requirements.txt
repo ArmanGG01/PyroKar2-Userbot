@@ -13,6 +13,7 @@ pymongo
 python-dotenv
 pymediainfo
 prettytable
+psycopg2-binary
 gitpython
 sqlalchemy==1.3.23
 uvloop
