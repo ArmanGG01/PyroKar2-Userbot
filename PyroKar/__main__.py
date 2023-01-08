@@ -17,36 +17,33 @@ MSG_ON = """
 """
 
 
-async def main():
+async def start_bot():
+    await app.start()
+    print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
         importlib.import_module("PyroKar.modules" + all_module)
         print(f"Successfully Imported {all_module} ✔")
     for cli in clients:
         try:
             await cli.start()
-            bot.me = await cli.get_me()
-            await client.join_chat("StoryMan01")
+            ex = await cli.get_me()
+                        await client.join_chat("StoryMan01")
             await client.join_chat("Karc0de")
             try:
                 await cli.send_message(
                     BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
                 )
-            except BaseException:
-                pass
-            LOGGER("PyroKar").info(
-                f"Logged in as {ex.first_name} | [ {ex.id} ]"
-            )
+            print(f"Started {ex.first_name} ✔ ")
+            #await cli.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
+            ids.append(ex.id)
+        except Exception as e:
+            print(f"{e}")
         except Exception as a:
             LOGGER("main").warning(a)
     LOGGER("PyroKar").info(f"PyroKar-UserBot v{BOT_VER} [👑 BERHASIL DIAKTIFKAN YA KONTOL! 👑]")
     if not str(BOTLOG_CHATID).startswith("-100"):
         await create_botlog(app)
     await idle()
-    await aiosession.close()
 
-
-if __name__ == "__main__":
-    LOGGER("PyroKar").info("Starting PyroKar-UserBot")
-    install()
-    heroku()
-    LOOP.run_until_complete(main())
+loop = asyncio.get_event_loop()
+loop.run_until_complete(start_bot())
