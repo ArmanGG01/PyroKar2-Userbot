@@ -34,11 +34,11 @@
     },
     "HEROKU_API_KEY": {
       "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
-      "required": false
+      "required": true
     },
     "HEROKU_APP_NAME": {
       "description": "Masukan Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
-      "required": false
+      "required": true
     }
   },
   "addons": [
