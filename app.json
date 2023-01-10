@@ -1,6 +1,6 @@
 {
-  "name": "PyroKar-Userbot",
-  "description": "[PyroKar-Userbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.  Powered by PyroKar-Userbot.",
+  "name": "PyroKar2-Userbot",
+  "description": "[PyroKar2-Userbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.",
   "stack": "heroku-22",
   "env": {
     "API_ID": {
@@ -13,6 +13,14 @@
     },
     "STRING_SESSION1": {
       "description": "Dapatkan String Session Pyrogram di Grup » https://t.me/obrolansuar » Lalu ketik #string",
+      "required": true
+    },
+    "STRING_SESSION2": {
+      "description": "Multi Client,Barang kli ada ayang 2 akun jadi 2 ubot hanya 1x deploy keuntungan?hemat dyno",
+      "required": false
+    },
+    "BOTLOG_CHATID" {
+      "description": " Buatlah Sebuah Grup Di Telegram Kalian Lalu Tambahkan @MissRosse Kedalam Grup Kalian Dan Jangan Lupa Ambil Id Grup Yang Awalan -100
       "required": true
     },
     "MONGO_URL": {
