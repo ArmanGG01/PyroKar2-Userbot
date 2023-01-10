@@ -20,7 +20,7 @@
       "required": false
     },
     "BOTLOG_CHATID" {
-      "description": " Buatlah Sebuah Grup Di Telegram Kalian Lalu Tambahkan @MissRosse Kedalam Grup Kalian Dan Jangan Lupa Ambil Id Grup Yang Awalan -100
+      "description": "Buatlah Sebuah Grup Di Telegram Kalian Lalu Tambahkan @MissRosse Kedalam Grup Kalian Dan Jangan Lupa Ambil Id Grup Yang Awalan -100",
       "required": true
     },
     "MONGO_URL": {
