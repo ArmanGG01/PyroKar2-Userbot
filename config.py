@@ -3,10 +3,10 @@ from os import getenv
 from dotenv import load_dotenv
 
 if os.path.exists(".env"):
-    load_dotenv(".env")
+    load_dotenv("config.env")
 
 
-API_ID = getenv("API_ID")
+API_ID = int(getenv("API_ID")
 API_HASH = getenv("API_HASH")
 STRING_SESSION1 = getenv("STRING_SESSION1")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
