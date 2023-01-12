@@ -9,9 +9,7 @@ from pymediainfo import MediaInfo
 from pyrogram.types import Message
 
 import multiprocessing
-import mimetypes
 import functools
-import threading
 from concurrent.futures import ThreadPoolExecutor
 
 max_workers = multiprocessing.cpu_count() * 5
