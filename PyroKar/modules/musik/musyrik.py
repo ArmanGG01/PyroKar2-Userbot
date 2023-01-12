@@ -10,8 +10,8 @@ from pyrogram import Client, filters
 import threading
 from pyrogram.errors import FloodWait, MessageNotModified
 import time
-from geez.helper.tools import *
-from geez.modules.basic.help import *
+from PyroKar.helper.tools import *
+from PyroKar.modules.basic.help import *
 from pytgcalls import GroupCallFactory, GroupCallFileAction
 import random
 import string
