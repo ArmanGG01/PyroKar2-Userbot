@@ -1,34 +1,23 @@
 #Manage Geez
 #Thanks For All
 import os
-import math
 import os
-import shlex
 import time
-from math import ceil
 import logging
 import ffmpeg
-from geez import app
 from pyrogram import Client, filters
-from pyrogram.types import Message
 
-import functools
 import threading
-from concurrent.futures import ThreadPoolExecutor
 from pyrogram.errors import FloodWait, MessageNotModified
-import multiprocessing
 import time
-import calendar
 from geez.helper.tools import *
 from geez.modules.basic.help import *
 from pytgcalls import GroupCallFactory, GroupCallFileAction
-import signal
 import random
 import string
 import asyncio
 import os
 import time
-import requests
 import datetime
 from yt_dlp import YoutubeDL
 from youtubesearchpython import SearchVideos
@@ -168,7 +157,7 @@ async def play_m(client, message):
         url = result_s[0]["link"]
         dur = result_s[0]["duration"]
         vid_title = result_s[0]["title"]
-        yt_id = result_s[0]["id"]
+        result_s[0]["id"]
         uploade_r = result_s[0]["channel"]
         start = time.time()
         try:
