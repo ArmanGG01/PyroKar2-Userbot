@@ -12,6 +12,7 @@ pyrogram
 pymongo
 python-dotenv
 pymediainfo
+ffmpeg-python
 prettytable
 psycopg2-binary
 gitpython
