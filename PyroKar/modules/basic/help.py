@@ -5,6 +5,7 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
 from PyroKar import app, CMD_HELP
+from PyroKar.modules.basic.help import *
 from PyroKar.helper.PyroHelpers import ReplyCheck
 from PyroKar.helper.utility import split_list
 
