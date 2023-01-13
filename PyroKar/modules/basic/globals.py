@@ -25,8 +25,8 @@ def globals_init():
         global sql, sql2
         from importlib import import_module
 
-        sql = import_module("PyroKar.helpers.SQL.gban_sql")
-        sql2 = import_module("PyroKar.helpers.SQL.gmute_sql")
+        sql = import_module("PyroKar.helper.SQL.gban_sql")
+        sql2 = import_module("PyroKar.helper.SQL.gmute_sql")
     except Exception as e:
         sql = None
         sql2 = None
