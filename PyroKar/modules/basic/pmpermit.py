@@ -14,10 +14,10 @@ from sqlalchemy.exc import IntegrityError
 
 from config import CMD_HANDLER as cmd
 from PyroKar import TEMP_SETTINGS
-from PyroKar.helpers.adminHelpers import DEVS
-from PyroKar.helpers.basic import edit_or_reply
-from PyroKar.helpers.SQL.globals import addgvar, gvarstatus
-from PyroKar.helpers.tools import get_arg
+from PyroKar.helper.adminHelpers import DEVS
+from PyroKar.helper.basic import edit_or_reply
+from PyroKar.helper.SQL.globals import addgvar, gvarstatus
+from PyroKar.helper.tools import get_arg
 
 from .help import add_command_help
 
@@ -37,10 +37,10 @@ DEF_UNAPPROVED_MSG = (
 @Client.on_message(
     ~filters.me & filters.private & ~filters.bot & filters.incoming, group=69
 )
-async def incomingpm(client: Client, message: Message):
+async def incomingpm(bot: Client, message: Message):
     try:
-        from PyroKar.helpers.SQL.globals import gvarstatus
-        from PyroKar.helpers.SQL.pm_permit_sql import is_approved
+        from PyroKar.helper.SQL.globals import gvarstatus
+        from PyroKar.helper.SQL.pm_permit_sql import is_approved
     except BaseException:
         pass
 
@@ -96,7 +96,7 @@ async def incomingpm(client: Client, message: Message):
 
 async def auto_accept(client, message):
     try:
-        from PyroKar.helpers.SQL.pm_permit_sql import approve, is_approved
+        from PyroKar.helper.SQL.pm_permit_sql import approve, is_approved
     except BaseException:
         pass
 
@@ -141,9 +141,9 @@ async def auto_accept(client, message):
 @Client.on_message(
     filters.command(["ok", "setuju", "approve"], cmd) & filters.me & filters.private
 )
-async def approvepm(client: Client, message: Message):
+async def approvepm(bot: Client, message: Message):
     try:
-        from PyroKar.helpers.SQL.pm_permit_sql import approve
+        from PyroKar.helper.SQL.pm_permit_sql import approve
     except BaseException:
         await message.edit("Running on Non-SQL mode!")
         return
@@ -180,9 +180,9 @@ async def approvepm(client: Client, message: Message):
 @Client.on_message(
     filters.command(["tolak", "nopm", "disapprove"], cmd) & filters.me & filters.private
 )
-async def disapprovepm(client: Client, message: Message):
+async def disapprovepm(bor: Client, message: Message):
     try:
-        from PyroKar.helpers.SQL.pm_permit_sql import dissprove
+        from PyroKar.helper.SQL.pm_permit_sql import dissprove
     except BaseException:
         await message.edit("Running on Non-SQL mode!")
         return
@@ -214,13 +214,13 @@ async def disapprovepm(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("pmlimit", cmd) & filters.me)
-async def setpm_limit(client: Client, cust_msg: Message):
+async def setpm_limit(bot: Client, cust_msg: Message):
     if gvarstatus("PMPERMIT") and gvarstatus("PMPERMIT") == "false":
         return await cust_msg.edit(
             f"**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `{cmd}setvar PM_AUTO_BAN True`"
         )
     try:
-        from PyroKar.helpers.SQL.globals import addgvar
+        from PyroKar.helper.SQL.globals import addgvar
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
@@ -242,7 +242,7 @@ async def setpm_limit(client: Client, cust_msg: Message):
 
 
 @Client.on_message(filters.command(["pmpermit", "pmguard"], cmd) & filters.me)
-async def onoff_pmpermit(client: Client, message: Message):
+async def onoff_pmpermit(bot: Client, message: Message):
     input_str = get_arg(message)
     if input_str == "off":
         h_type = False
@@ -266,14 +266,14 @@ async def onoff_pmpermit(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("setpmpermit", cmd) & filters.me)
-async def setpmpermit(client: Client, cust_msg: Message):
+async def setpmpermit(bot: Client, cust_msg: Message):
     """Set your own Unapproved message"""
     if gvarstatus("PMPERMIT") and gvarstatus("PMPERMIT") == "false":
         return await cust_msg.edit(
             "**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
     try:
-        import PyroKar.helpers.SQL.globals as sql
+        import PyroKar.helper.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
@@ -290,13 +290,13 @@ async def setpmpermit(client: Client, cust_msg: Message):
 
 
 @Client.on_message(filters.command("getpmpermit", cmd) & filters.me)
-async def get_pmermit(client: Client, cust_msg: Message):
+async def get_pmermit(bot: Client, cust_msg: Message):
     if gvarstatus("PMPERMIT") and gvarstatus("PMPERMIT") == "false":
         return await cust_msg.edit(
             "**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.setvar PM_AUTO_BAN True`"
         )
     try:
-        import PyroKar.helpers.SQL.globals as sql
+        import PyroKar.helper.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
@@ -312,13 +312,13 @@ async def get_pmermit(client: Client, cust_msg: Message):
 
 
 @Client.on_message(filters.command("resetpmpermit", cmd) & filters.me)
-async def reset_pmpermit(client: Client, cust_msg: Message):
+async def reset_pmpermit(bot: Client, cust_msg: Message):
     if gvarstatus("PMPERMIT") and gvarstatus("PMPERMIT") == "false":
         return await cust_msg.edit(
             f"**Anda Harus Menyetel Var** `PM_AUTO_BAN` **Ke** `True`\n\n**Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `{cmd}setvar PM_AUTO_BAN True`"
         )
     try:
-        import PyroKar.helpers.SQL.globals as sql
+        import PyroKar.helper.SQL.globals as sql
     except AttributeError:
         await cust_msg.edit("**Running on Non-SQL mode!**")
         return
