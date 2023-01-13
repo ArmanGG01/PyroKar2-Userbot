@@ -225,7 +225,7 @@ async def kick_user(bot: Client, message: Message):
 )
 async def promotte(bot: Client, message: Message):
     user_id = await extract_user(message)
-    umention = (await client.get_users(user_id)).mention
+    umention = (await bot.get_users(user_id)).mention
     Man = await edit_or_reply(message, "`Processing...`")
     if not user_id:
         return await Man.edit("I can't find that user.")
