@@ -10,9 +10,17 @@ from aiohttp import ClientSession
 from logging.handlers import RotatingFileHandler
 from pytgcalls import GroupCallFactory
 
-StartTime = time.time()
-START_TIME = datetime.now()
 CMD_HELP = {}
+
+StartTime = time.time()
+
+START_TIME = datetime.now()
+
+TEMP_SETTINGS: Dict[Any, Any] = {}
+TEMP_SETTINGS["PM_COUNT"] = {}
+TEMP_SETTINGS["PM_LAST_MSG"] = {}
+
+
 SUDO_USER = SUDO_USERS
 clients = []
 ids = []
