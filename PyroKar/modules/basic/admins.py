@@ -14,8 +14,8 @@ from pyrogram.errors import ChatAdminRequired
 from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 
 from config import CMD_HANDLER as cmd
-from PyroKar.helpers.adminHelpers import DEVS
-from PyroKar.helpers.basic import edit_or_reply
+from PyroKar.helper.adminHelpers import DEVS
+from PyroKar.helper.basic import edit_or_reply
 from PyroKar.modules.help import add_command_help
 from PyroKar.utils.misc import extract_user, extract_user_and_reason, list_admins
 
@@ -32,7 +32,7 @@ unmute_permissions = ChatPermissions(
 @Client.on_message(
     filters.group & filters.command(["setchatphoto", "setgpic"], cmd) & filters.me
 )
-async def set_chat_photo(client: Client, message: Message):
+async def set_chat_photo(bot: Client, message: Message):
     zuzu = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
@@ -52,7 +52,7 @@ async def set_chat_photo(client: Client, message: Message):
     filters.group & filters.command("cban", ["."]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.group & filters.command("ban", cmd) & filters.me)
-async def member_ban(client: Client, message: Message):
+async def member_ban(bot: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
@@ -88,7 +88,7 @@ async def member_ban(client: Client, message: Message):
 
 @Client.on_message(filters.command("cunban", ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.group & filters.command("unban", cmd) & filters.me)
-async def member_unban(client: Client, message: Message):
+async def member_unban(bot: Client, message: Message):
     reply = message.reply_to_message
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
@@ -114,7 +114,7 @@ async def member_unban(client: Client, message: Message):
     filters.command(["cpin", "cunpin"], ["."]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command(["pin", "unpin"], cmd) & filters.me)
-async def pin_message(client: Client, message):
+async def pin_message(bot: Client, message):
     if not message.reply_to_message:
         return await edit_or_reply(message, "Reply to a message to pin/unpin it.")
     Man = await edit_or_reply(message, "`Processing...`")
@@ -137,7 +137,7 @@ async def pin_message(client: Client, message):
 
 @Client.on_message(filters.command(["cmute"], ["."]) & filters.user(DEVS) & ~filters.me)
 @Client.on_message(filters.command("mute", cmd) & filters.me)
-async def mute(client: Client, message: Message):
+async def mute(bot: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
@@ -166,7 +166,7 @@ async def mute(client: Client, message: Message):
     filters.command(["cunmute"], ["."]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.group & filters.command("unmute", cmd) & filters.me)
-async def unmute(client: Client, message: Message):
+async def unmute(bot: Client, message: Message):
     user_id = await extract_user(message)
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
@@ -183,7 +183,7 @@ async def unmute(client: Client, message: Message):
     filters.command(["ckick", "cdkick"], ["."]) & filters.user(DEVS) & ~filters.me
 )
 @Client.on_message(filters.command(["kick", "dkick"], cmd) & filters.me)
-async def kick_user(client: Client, message: Message):
+async def kick_user(bot: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
@@ -223,7 +223,7 @@ async def kick_user(client: Client, message: Message):
 @Client.on_message(
     filters.group & filters.command(["promote", "fullpromote"], cmd) & filters.me
 )
-async def promotte(client: Client, message: Message):
+async def promotte(bot: Client, message: Message):
     user_id = await extract_user(message)
     umention = (await client.get_users(user_id)).mention
     Man = await edit_or_reply(message, "`Processing...`")
@@ -271,7 +271,7 @@ async def promotte(client: Client, message: Message):
     & ~filters.me
 )
 @Client.on_message(filters.group & filters.command("demote", cmd) & filters.me)
-async def demote(client: Client, message: Message):
+async def demote(bor: Client, message: Message):
     user_id = await extract_user(message)
     Man = await edit_or_reply(message, "`Processing...`")
     if not user_id:
