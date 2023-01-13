@@ -8,6 +8,7 @@ from datetime import datetime
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from aiohttp import ClientSession
 from logging.handlers import RotatingFileHandler
+from typing import Any, Dict
 from pytgcalls import GroupCallFactory
 
 CMD_HELP = {}
