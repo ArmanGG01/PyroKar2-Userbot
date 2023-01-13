@@ -46,7 +46,7 @@ async def incomingpm(bot: Client, message: Message):
 
     if gvarstatus("PMPERMIT") and gvarstatus("PMPERMIT") == "false":
         return
-    if await auto_accept(client, message) or message.from_user.is_self:
+    if await auto_accept(bot, message) or message.from_user.is_self:
         message.continue_propagation()
     if message.chat.id != 777000:
         PM_LIMIT = gvarstatus("PM_LIMIT") or 5
@@ -180,7 +180,7 @@ async def approvepm(bot: Client, message: Message):
 @Client.on_message(
     filters.command(["tolak", "nopm", "disapprove"], cmd) & filters.me & filters.private
 )
-async def disapprovepm(bor: Client, message: Message):
+async def disapprovepm(bot: Client, message: Message):
     try:
         from PyroKar.helper.SQL.pm_permit_sql import dissprove
     except BaseException:
