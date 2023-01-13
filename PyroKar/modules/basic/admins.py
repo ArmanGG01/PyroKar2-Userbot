@@ -16,7 +16,7 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 from config import CMD_HANDLER as cmd
 from PyroKar.helper.adminHelpers import DEVS
 from PyroKar.helper.basic import edit_or_reply
-from PyroKar.modules.help import add_command_help
+from PyroKar.modules.basic.help import add_command_help
 from PyroKar.utils.misc import extract_user, extract_user_and_reason, list_admins
 
 unmute_permissions = ChatPermissions(
