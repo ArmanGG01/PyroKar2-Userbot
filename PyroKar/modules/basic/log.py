@@ -42,7 +42,7 @@ async def monito_p_m_s(bot: Client, message: Message):
                     )
                 )
                 LOG_CHATS_.COUNT = 0
-            LOG_CHATS_.NEWPM = await client.send_message(
+            LOG_CHATS_.NEWPM = await bot.send_message(
                 BOTLOG_CHATID,
                 f"💌 <b>#MENERUSKAN #PESAN_BARU</b>\n<b> • Dari :</b> {message.from_user.mention}\n<b> • User ID :</b> <code>{message.from_user.id}</code>",
                 parse_mode=enums.ParseMode.HTML,
