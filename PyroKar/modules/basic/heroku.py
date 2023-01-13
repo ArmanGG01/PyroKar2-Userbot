@@ -33,7 +33,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 @Client.on_message(filters.command("setvar", CMD_HANDLER) & filters.me)
-async def set_var(client: Client, message: Message):
+async def set_var(bot: Client, message: Message):
     if len(message.command) < 3:
         return await edit_or_reply(
             message, f"<b>Usage:</b> {CMD_HANDLER}setvar [Var Name] [Var Value]"
@@ -65,7 +65,7 @@ async def set_var(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("getvar", CMD_HANDLER) & filters.me)
-async def varget_(client: Client, message: Message):
+async def varget_(bot: Client, message: Message):
     if len(message.command) != 2:
         return await edit_or_reply(
             message, f"<b>Usage:</b> {CMD_HANDLER}getvar [Var Name]"
@@ -96,7 +96,7 @@ async def varget_(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("delvar", CMD_HANDLER) & filters.me)
-async def vardel_(client: Client, message: Message):
+async def vardel_(bot: Client, message: Message):
     if len(message.command) != 2:
         return await message.edit(f"<b>Usage:</b> {CMD_HANDLER}delvar [Var Name]")
     Man = await edit_or_reply(message, "`Processing...`")
@@ -125,7 +125,7 @@ async def vardel_(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("usage", CMD_HANDLER) & filters.me)
-async def usage_heroku(client: Client, message: Message):
+async def usage_heroku(bot: Client, message: Message):
     ### Credits CatUserbot
     if await in_heroku():
         if HAPP is None:
