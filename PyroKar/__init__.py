@@ -75,10 +75,7 @@ else:
    API_HASH = "4e984ea35f854762dcde906dce426c2d"
 
 if not BOT_TOKEN:
-   print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ")   
-
-if not BOT_TOKEN2:
-   print("WARNING: BOT TOKEN2 NOT FOUND PLZ ADD ")
+   print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ")
 
 app = Client(
     name="app",
