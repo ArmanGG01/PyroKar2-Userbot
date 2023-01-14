@@ -4,7 +4,7 @@
     "logo": "https://telegra.ph/file/3f4c55755b365077bfc05.jpg",
     "keywords": ["telegram", "userbot", "PyroKar", "pyrogram"],
     "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
-    "stack": "container",
+    "stack": "heroku-22",
     "env": {
         "STRING_SESSION1": {
             "description": "Ambil string pyrogram dari https://t.me/geezramstringbot",
