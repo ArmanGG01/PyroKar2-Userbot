@@ -1,75 +1,71 @@
 {
-    "name": "PyroKar2-Userbot",
-    "description": "Gunakan Lah Userbot Ini Dengan Bijak, Kalo Akun Anda Terhapus Jangan Salahin Dev.",
-    "logo": "https://telegra.ph/file/3f4c55755b365077bfc05.jpg",
-    "keywords": ["telegram", "userbot", "PyroKar", "pyrogram"],
-    "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
-    "stack": "heroku-22",
-    "env": {
-        "STRING_SESSION1": {
-            "description": "Ambil string pyrogram dari https://t.me/geezramstringbot",
-            "required": true
-        },
-        "API_ID": {
-            "description": "Ambil Dimana Aja Sukak Kau lah",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "Ambil Aja Sukak Kau Mau dari Mana",
-            "required": true
-        },
-        "MONGO_URL": {
-            "description": "mongodb.com Database",
-            "required": true
-        },
-        "SUDO_USERS": {
-            "description": "Daftar Sudo (Id Telegram Akun Mu Yang Kedua Jugak boleh)",
-            "required": false
-        },
-        "OWNER_ID": {
-            "description": "Isi Make Id Telegram Mu Jangan Isi Id zeus",
-            "required": true
-        },
-        "BOT_TOKEN": {
-            "description": " Buat Lah Sebuah bot, Lalu Ambil tokennya dari @BotFather Yang Ada di telegram",
-            "required": true,
-            "value": ""
-        },
-        "HEROU_APP_NAME": {
-            "description": "Isi Dengan Yang Paling Atas Jangan Buat Beda Harus Sama Persis Sama yang atas",
-            "required": true,
-            "value": ""
-        },
-        "HEROU_API_KEY": {
-            "description": "Ambil Di Pengaturan Heroku Mu Kontol",
-            "required": true,
-            "value": ""
-        },
-        "BOTLOG_CHATID": {
-            "description": "Buatlah Group publik untuk bot log Mu yang hina ini dengan awalan -100",
-            "required": true,
-            "value": "-100"
-        },
-        "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-    ],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "eco"
-        },
-    "addons": [{
-        "plan": "heroku-postgresql",
-        "options": {
-            "version": "12"
-        }
-        }
-    ]
+  "name": "PyroKar2-Userbot",
+  "description": "[PyroKar2-Userbot] adalah userbot Telegram modular yang berjalan di Python3 dengan Library Pyrogram.",
+  "stack": "heroku-22",
+  "env": {
+    "API_ID": {
+      "description": "Dapatkan API ID di web my.telegram.org Masukan yg APP ID Telegram",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Dapatkan API Hash di web my.telegram.org",
+      "required": true
+    },
+    "STRING_SESSION1": {
+      "description": "Dapatkan String Session Pyrogram di Grup » https://t.me/obrolansuar » Lalu ketik #string",
+      "required": true
+    },
+    "STRING_SESSION2": {
+      "description": "Multi Client,Barang kli ada ayang 2 akun jadi 2 ubot hanya 1x deploy keuntungan?hemat dyno",
+      "required": false
+    },
+    "BOTLOG_CHATID" {
+      "description": "Buatlah Sebuah Grup Di Telegram Kalian Lalu Tambahkan @MissRosse Kedalam Grup Kalian Dan Jangan Lupa Ambil Id Grup Yang Awalan -100",
+      "required": true
+    },
+    "MONGO_URL": {
+      "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "Daftar Pengguna (Id Pengguna)",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Pergilah Ke Telegram Lalu Ambil bot token Dari @BotFather Yang Berada Di Telegram",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Masukan Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+      "required": true
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
     }
   }
 }
