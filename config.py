@@ -13,7 +13,6 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 OWNER_ID = getenv("OWNER_ID", "1694909518")
 BOT_VER = "1.1.5@main"
 BOT_TOKEN = getenv("BOT_TOKEN")
-BOT_TOKEN2 = getenv("BOT_TOKEN2")
 MONGO_URL = getenv("MONGO_URL")
 ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg")
 ALIVE_TEXT = getenv("ALIVE_TEXT", "")
