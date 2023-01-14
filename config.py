@@ -14,7 +14,7 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 OWNER_ID = getenv("OWNER_ID", "1694909518")
 BOT_VER = "1.1.5@main"
 BOT_TOKEN = getenv("BOT_TOKEN")
-MONGO_URL = getenv("MONGO_URL")
+MONGO_URL = getenv("MONGO_URL", "mongodb://mongo:qEMvAihniInPbSc5EWYj@containers-us-west-162.railway.app:7264")
 ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg")
 ALIVE_TEXT = getenv("ALIVE_TEXT", "")
 PM_LOGGER = getenv("PM_LOGGER")
@@ -23,7 +23,7 @@ GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 REPO_URL = getenv("REPO_URL", "https://github.com/ArmanGG01/PyroKar2-Userbot")
 BRANCH = getenv("BRANCH", "main") #don't change
 CMD_HANDLER = getenv("CMD_HANDLER", ".")
-DB_URL = getenv("DATABASE_URL", "mongodb+srv://Enzy:Enzykontol12@cluster0.t2zje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+DB_URL = getenv("DATABASE_URL", "")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
