@@ -50,29 +50,23 @@
             "required": true,
             "value": "-100"
         },
-        "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "heroku/nodejs"
-          },
-          {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-    ],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "basic"
-        },
-    "addons": [{
-        "plan": "heroku-postgresql",
-        "options": {
-            "version": "12"
-        }
-        }
-    ]
+        "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
     }
   }
 }
