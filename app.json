@@ -17,7 +17,7 @@
             "description": "Ambil Aja Sukak Kau Mau dari Mana",
             "required": true
         },
-        "DB_URL": {
+        "MONGO_URL": {
             "description": "mongodb.com Database",
             "required": true
         },
