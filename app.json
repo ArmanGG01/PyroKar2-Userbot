@@ -2,7 +2,6 @@
     "name": "PyroKar2-Userbot",
     "description": "Gunakan Lah Use rbot Ini Dengan Bijak, Kalo Akun Anda Terhapus Jangan Salahin Dev.",
     "logo": "https://telegra.ph/file/3f4c55755b365077bfc05.jpg",
-    "keywords": ["telegram", "userbot", "PyroKar", "pyrogram"],
     "repository": "https://github.com/ArmanGG01/PyroKar2-Userbot",
     "stack": "heroku-22",
     "env": {
@@ -60,6 +59,9 @@
       "url": "heroku/python"
     },
     {
+      "url": "heroku/nodejs"
+     },
+     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
   ],
