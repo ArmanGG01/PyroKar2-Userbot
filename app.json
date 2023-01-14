@@ -49,6 +49,13 @@
       "required": true
     }
   },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "image": "heroku/ruby",
   "addons": [
     "openredis",
     {
@@ -59,19 +66,19 @@
       "plan": "heroku-postgresql",
       "options": {
         "version": "9.5"
+      }
+    }
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
-    },
-    {
-      "url": "heroku/ruby"
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
     }
   ],
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "eco"
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
     }
   }
 }
