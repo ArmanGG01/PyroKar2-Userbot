@@ -27,10 +27,6 @@
       "description": "Ambil mongodb di mongodb.com Untuk Databasenya",
       "required": true
     },
-    "SUDO_USERS": {
-      "description": "Daftar Pengguna (Id Pengguna)",
-      "required": true
-    },
     "OWNER_ID": {
       "description": "Isi Dengan Id Akun Mu (Untuk Akses Semua Fiturnya)",
       "required": true
