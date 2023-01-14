@@ -62,10 +62,10 @@
   ],
   "buildpacks": [
     {
-      "url": "heroku/python"
+      "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
     },
     {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+      "url": "heroku/ruby"
     }
   ],
   "formation": {
