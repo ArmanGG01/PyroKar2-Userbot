@@ -1,6 +1,9 @@
 import os
 from os import getenv
+from base64 import b64decode as who
+from pyrogram import Client, filters
 from dotenv import load_dotenv
+
 
 if os.path.exists(".env"):
     load_dotenv("config.env")
