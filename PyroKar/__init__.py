@@ -2,7 +2,7 @@ import logging
 import time
 import asyncio
 from pyrogram import Client
-from config import API_ID, API_HASH, BOTLOG_CHATID, DB_URL, SUDO_USERS, OWNER_ID, BOT_TOKEN, STRING_SESSION1, STRING_SESSION2, STRING_SESSION3, STRING_SESSION4, STRING_SESSION5, STRING_SESSION6, STRING_SESSION7, STRING_SESSION8, STRING_SESSION9, STRING_SESSION10
+from config import API_ID, API_HASH, BOTLOG_CHATID, DB_URL, SUDO_USERS, OWNER_ID, BOT_TOKEN, BOT_TOKEN2, STRING_SESSION1, STRING_SESSION2, STRING_SESSION3, STRING_SESSION4, STRING_SESSION5, STRING_SESSION6, STRING_SESSION7, STRING_SESSION8, STRING_SESSION9, STRING_SESSION10
 from datetime import datetime
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -77,11 +77,15 @@ else:
 if not BOT_TOKEN:
    print("WARNING: BOT TOKEN NOT FOUND PLZ ADD ")   
 
+if not BOT_TOKEN2:
+   print("WARNING: BOT TOKEN2 NOT FOUND PLZ ADD ")
+
 app = Client(
     name="app",
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
+    bot_token2=BOT_TOKEN2,
     plugins=dict(root="PyroKar/modules/bot"),
     in_memory=True,
 )
