@@ -10,6 +10,14 @@
             "description": "Ambil string pyrogram dari https://t.me/geezramstringbot",
             "required": true
         },
+        "API_ID": {
+            "description": "Ambil Dimana Aja Sukak Kau lah",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Ambil Aja Sukak Kau Mau dari Mana",
+            "required": true
+        },
         "MONGO_URL": {
             "description": "mongodb.com Database",
             "required": true
