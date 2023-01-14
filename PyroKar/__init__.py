@@ -84,8 +84,7 @@ app = Client(
     name="app",
     api_id=API_ID,
     api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
-    bot_token2=BOT_TOKEN2,
+    bot_token=BOT_TOKEN, BOT_TOKEN2,
     plugins=dict(root="PyroKar/modules/bot"),
     in_memory=True,
 )
