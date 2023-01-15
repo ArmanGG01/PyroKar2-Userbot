@@ -2,9 +2,7 @@ import os
 from os import getenv
 from dotenv import load_dotenv
 
-
-if os.path.exists(".env"):
-    load_dotenv("config.env")
+  load_dotenv("config.env")
 
 
 API_ID = int(getenv("API_ID", ""))
@@ -14,7 +12,7 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 OWNER_ID = getenv("OWNER_ID", "1694909518")
 BOT_VER = "1.1.5@main"
 BOT_TOKEN = getenv("BOT_TOKEN")
-MONGO_URL = getenv("MONGO_URL", "mongodb://mongo:qEMvAihniInPbSc5EWYj@containers-us-west-162.railway.app:7264")
+MONGO_URL = getenv("MONGO_URL", "")
 ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph//file/5f3929a7c65ed2dfd93db.jpg")
 ALIVE_TEXT = getenv("ALIVE_TEXT", "")
 PM_LOGGER = getenv("PM_LOGGER")
