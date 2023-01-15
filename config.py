@@ -1,5 +1,9 @@
+import os
 from os import getenv
+from distutils.util import strtobool
 from dotenv import load_dotenv
+from base64 import b64decode
+from pyrogram import Client, filters
 
 load_dotenv("config.env")
 
