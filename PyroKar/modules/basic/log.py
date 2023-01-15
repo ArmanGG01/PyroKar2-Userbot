@@ -5,6 +5,7 @@ from pyrogram.types import *
 
 from config import CMD_HANDLER as cmd
 from PyroKar import BOTLOG_CHATID
+from PyroKar import *
 from PyroKar.helper.basic import edit_or_reply
 from PyroKar.helper.SQL import no_log_pms_sql
 from PyroKar.helper.SQL.globals import addgvar, gvarstatus
