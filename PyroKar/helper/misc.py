@@ -117,10 +117,6 @@ def git():
         LOGGER("PyroKar").info("Fetched Latest Updates")
 
 
-def is_heroku():
-    return "heroku" in socket.getfqdn()
-
-
 def heroku():
     global HAPP
     if is_heroku:
@@ -135,7 +131,7 @@ def heroku():
                     f"Pastikan HEROKU_API_KEY dan HEROKU_APP_NAME anda dikonfigurasi dengan benar di config vars heroku."
                 )
                 
-async def in_heroku():
+async def is_heroku():
     return "heroku" in socket.getfqdn()
 
 
