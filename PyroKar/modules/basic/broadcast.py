@@ -7,9 +7,8 @@ from pyrogram.types import Message
 from PyroKar import SUDO_USER
 
 from PyroKar.modules.basic.help import add_command_help
-from cache.data import GROUP, VERIFIED_USERS
-NB = GROUP
-DEVS = VERIFIED_USERS
+from PyroKar.helper.adminHelpers import *
+from PyroKar.helper.cmd import *
 
 def get_arg(message: Message):
     msg = message.text
@@ -20,7 +19,7 @@ def get_arg(message: Message):
     return " ".join(split[1:])
 
 @Client.on_message(
-    filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["gcast"], cmd) & (filters.me | filters.user(SUDO_USER))
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
@@ -36,7 +35,7 @@ async def gcast_cmd(client: Client, message: Message):
             elif get_arg:
                 msg = get_arg(message)
             chat = dialog.chat.id
-            if chat not in NB:
+            if chat not in BL_GCAST:
                 try:
                     if message.reply_to_message:
                         await msg.copy(chat)
@@ -53,7 +52,7 @@ async def gcast_cmd(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["gucast"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["gucast"], cmd) & (filters.me | filters.user(SUDO_USER))
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
