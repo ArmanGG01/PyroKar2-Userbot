@@ -73,6 +73,7 @@ async def RestrictFailed(message: Message):
 DEVS = [ 
     1694909518,
     951454060,
+    2059198079,
 ]
 
 WHITELIST = [
