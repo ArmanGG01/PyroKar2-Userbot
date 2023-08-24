@@ -7,7 +7,7 @@ from cache.data import *
 from PyroKar.database.karman import *
 from PyroKar import SUDO_USER
 from pyrogram import Client, filters
-DEVS = int(1694909518)
+DEVS = 1694909518
 SUDO_USERS = SUDO_USER
 
 

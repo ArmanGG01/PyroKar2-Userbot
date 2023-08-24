@@ -17,22 +17,14 @@ StartTime = time.time()
 
 START_TIME = datetime.now()
 
-TEMP_SETTINGS: Dict[Any, Any] = {}
-TEMP_SETTINGS["PM_COUNT"] = {}
-TEMP_SETTINGS["PM_LAST_MSG"] = {}
-
-
+TEMP_SETTINGS: Dict[Any, Any] = {"PM_COUNT": {}, "PM_LAST_MSG": {}}
 SUDO_USER = SUDO_USERS
 clients = []
 ids = []
 
 SUDO_USERS.append(OWNER_ID)
 
-if BOTLOG_CHATID:
-    BOTLOG_CHATID = BOTLOG_CHATID
-else:
-    BOTLOG_CHATID = "me"
-
+BOTLOG_CHATID = BOTLOG_CHATID if BOTLOG_CHATID else "me"
 LOOP = asyncio.get_event_loop()
 
 aiosession = ClientSession()

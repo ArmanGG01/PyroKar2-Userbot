@@ -57,10 +57,10 @@ def _netcat(host, port, content):
     s.sendall(content.encode())
     s.shutdown(socket.SHUT_WR)
     while True:
-        data = s.recv(4096).decode("utf-8").strip("\n\x00")
-        if not data:
+        if data := s.recv(4096).decode("utf-8").strip("\n\x00"):
+            return data
+        else:
             break
-        return data
     s.close()
 
 
@@ -71,10 +71,9 @@ async def user_input(input):
 
 async def paste_queue(content):
     loop = get_running_loop()
-    link = await loop.run_in_executor(
+    return await loop.run_in_executor(
         None, partial(_netcat, "ezup.dev", 9999, content)
     )
-    return link
 
 
 def git():
@@ -87,9 +86,9 @@ def git():
         UPSTREAM_REPO = REPO_URL
     try:
         repo = Repo()
-        LOGGER("PyroKar").info(f"Git Client Found")
+        LOGGER("PyroKar").info("Git Client Found")
     except GitCommandError:
-        LOGGER("PyroKar").info(f"Invalid Git Command")
+        LOGGER("PyroKar").info("Invalid Git Command")
     except InvalidGitRepositoryError:
         repo = Repo.init()
         if "origin" in repo.remotes:
@@ -124,11 +123,11 @@ def heroku():
             try:
                 Heroku = heroku3.from_key(HEROKU_API_KEY)
                 HAPP = Heroku.app(HEROKU_APP_NAME)
-                LOGGER("PyroKar").info(f"Heroku App Configured")
+                LOGGER("PyroKar").info("Heroku App Configured")
             except BaseException as e:
                 LOGGER("Heroku").error(e)
                 LOGGER("Heroku").info(
-                    f"Pastikan HEROKU_API_KEY dan HEROKU_APP_NAME anda dikonfigurasi dengan benar di config vars heroku."
+                    "Pastikan HEROKU_API_KEY dan HEROKU_APP_NAME anda dikonfigurasi dengan benar di config vars heroku."
                 )
                 
 async def is_heroku():

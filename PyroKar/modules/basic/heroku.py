@@ -81,17 +81,16 @@ async def shutdown_bot(client: Client, message: Message):
     filters.command(["logs"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def log_(client, message):
-    if await is_heroku():
-        if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
-            return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your Client, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
-            )
-        elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
-            return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
-            )
-    else:
+    if not await is_heroku():
         return await message.reply_text("Only for Heroku Apps")
+    if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
+        return await message.reply_text(
+            "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your Client, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
+        )
+    elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
+        return await message.reply_text(
+            "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
+        )
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         happ = Heroku.app(HEROKU_APP_NAME)
@@ -100,22 +99,21 @@ async def log_(client, message):
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
         )
     data = happ.get_log()
-    if len(data) > 1024:
-        link = await paste_queue(data)
-        url = link + "/index.txt"
-        return await message.reply_text(
-            f"Here is the Log of Your App[{HEROKU_APP_NAME}]\n\n[Click Here to checkout Logs]({url})"
-        )
-    else:
+    if len(data) <= 1024:
         return await message.reply_text(data)
+    link = await paste_queue(data)
+    url = f"{link}/index.txt"
+    return await message.reply_text(
+        f"Here is the Log of Your App[{HEROKU_APP_NAME}]\n\n[Click Here to checkout Logs]({url})"
+    )
 
 
 @Client.on_message(
     filters.command(["getvar"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def varget(client: Client, message: Message):
-    usage = "**Usage:**\n/getvar [Var Name]"
     if len(message.command) != 2:
+        usage = "**Usage:**\n/getvar [Var Name]"
         return await message.reply_text(usage)
     check_var = message.text.split(None, 2)[1]
     if await is_heroku():
@@ -141,25 +139,24 @@ async def varget(client: Client, message: Message):
             )
         else:
             return await message.reply_text("No such Var")
-    else:
-        path = dotenv.find_dotenv()
-        if not path:
-            return await message.reply_text(".env not found.")
-        output = dotenv.get_key(path, check_var)
-        if not output:
-            return await message.reply_text("No such Var")
-        else:
-            return await message.reply_text(
+    elif path := dotenv.find_dotenv():
+        return (
+            await message.reply_text(
                 f".env:\n\n**{check_var}:** `{str(output)}`"
             )
+            if (output := dotenv.get_key(path, check_var))
+            else await message.reply_text("No such Var")
+        )
+    else:
+        return await message.reply_text(".env not found.")
 
 
 @Client.on_message(
     filters.command(["delvar"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def vardel(client: Client, message: Message):
-    usage = "**Usage:**\n/delvar [Var Name]"
     if len(message.command) != 2:
+        usage = "**Usage:**\n/delvar [Var Name]"
         return await message.reply_text(usage)
     check_var = message.text.split(None, 2)[1]
     if await is_heroku():
@@ -179,13 +176,12 @@ async def vardel(client: Client, message: Message):
                 " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
             )
         heroku_config = happ.config()
-        if check_var in heroku_config:
-            await message.reply_text(
-                f"**Heroku Var Deletion:**\n\n`{check_var}` has been deleted successfully."
-            )
-            del heroku_config[check_var]
-        else:
-            return await message.reply_text(f"No such Var")
+        if check_var not in heroku_config:
+            return await message.reply_text("No such Var")
+        await message.reply_text(
+            f"**Heroku Var Deletion:**\n\n`{check_var}` has been deleted successfully."
+        )
+        del heroku_config[check_var]
     else:
         path = dotenv.find_dotenv()
         if not path:
@@ -203,8 +199,8 @@ async def vardel(client: Client, message: Message):
     filters.command(["setvar"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def setvar(client: Client, message: Message):
-    usage = "**Usage:**\n/setvar [Var Name] [Var Value]"
     if len(message.command) < 3:
+        usage = "**Usage:**\n/setvar [Var Name] [Var Value]"
         return await message.reply_text(usage)
     to_set = message.text.split(None, 2)[1].strip()
     value = message.text.split(None, 2)[2].strip()
@@ -252,18 +248,16 @@ async def setvar(client: Client, message: Message):
     filters.command(["usage"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def usage_dynos(client, message):
-    ### Credits CatUserbot
-    if await is_heroku():
-        if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
-            return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your Client, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
-            )
-        elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
-            return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
-            )
-    else:
+    if not await is_heroku():
         return await message.reply_text("Only for Heroku Apps")
+    if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
+        return await message.reply_text(
+            "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your Client, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
+        )
+    elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
+        return await message.reply_text(
+            "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
+        )
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         Heroku.app(HEROKU_APP_NAME)
@@ -283,8 +277,8 @@ async def usage_dynos(client, message):
         "Authorization": f"Bearer {HEROKU_API_KEY}",
         "Accept": "application/vnd.heroku+json; version=3.account-quotas",
     }
-    path = "/accounts/" + account_id + "/actions/get-quota"
-    r = requests.get("https://api.heroku.com" + path, headers=headers)
+    path = f"/accounts/{account_id}/actions/get-quota"
+    r = requests.get(f"https://api.heroku.com{path}", headers=headers)
     if r.status_code != 200:
         return await dyno.edit("Unable to fetch.")
     result = r.json()
