@@ -123,7 +123,6 @@ async def spam_stick(client: Client, message: Message):
         )
         return
     else:
-        i = 0
         times = message.command[1]
         if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             for _ in range(int(times)):
